@@ -1,0 +1,36 @@
+@import url(../styles/Reset.scss);
+div.nav{
+  display: grid;
+  grid-template-columns: 1fr 19fr;
+  grid-template-rows: 60px;
+  width: 98vw;
+  color: white;
+  border: 1px solid white;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  z-index: 10;
+  .menubtn{
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  .navtitle{
+    display: flex;
+    border: 1px solid yellow;
+    align-items: center;
+    font-size: 3rem;
+    justify-content: center;
+    letter-spacing: 2px;
+    p{
+      transform: translateX(-40px);
+      cursor: pointer;
+      font-family: 'DM Serif Display', serif;
+
+    }
+
+  }
+}

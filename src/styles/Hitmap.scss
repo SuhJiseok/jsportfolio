@@ -1,0 +1,96 @@
+.hitmap{
+    margin-left: -10px;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-column-gap: 50px;
+    border: 1px solid blue;
+    font-size: 4rem;
+    >div{
+        border: 1px solid pink;
+    }
+}
+
+.mapleft{
+    display: flex;
+    flex-direction: column;
+    
+}
+.maptime{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    >div{
+        border: 1px solid skyblue;
+        width: 40%;
+        border-radius: 33px;
+        height: 380px;
+        background-color: #222222;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        >p:last-of-type{
+            text-align: right;
+        }
+    }
+}
+.mapclock{
+    border: 1px solid gray;
+    width: 80%;
+    height: 57%;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+
+
+.maptrain{
+    border: 1px solid red;
+    margin-top: 40px;
+    border-radius: 0px 33px 33px 0px;
+    height: 420px;
+    background-color: #222222;
+    padding: 20px;
+}
+.mapcenter{
+    transform: translateY(-300px);
+}
+.mapcenter div:first-of-type{
+    height: 680px;
+    padding: 20px;
+}
+.mapcenter div:last-of-type{
+    height: 420px;
+    margin-top: 40px;
+    padding: 20px;
+}
+.mapcenter>div{
+    border: 1px solid yellow;
+    position: relative;
+    border-radius: 33px;
+    background-color: #222222;
+
+}
+
+.mapright{
+    margin-right: 10px;
+    transform: translateY(-300px);
+}
+.mapright>div{
+    border: 1px solid green;
+    background-color: #222222;
+    border-radius: 33px;
+    padding: 20px;
+}
+.mapright div:first-of-type{
+    height: 680px;
+}
+.mapright div:last-of-type{
+    margin-top: 40px;
+    height: 610px;
+    width: 90%;
+}
