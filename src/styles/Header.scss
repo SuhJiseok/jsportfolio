@@ -1,18 +1,21 @@
 @import url(../styles/Reset.scss);
-div.nav{
+.nav{
   display: grid;
   grid-template-columns: 1fr 19fr;
-  grid-template-rows: 60px;
-  width: 98vw;
+  height: 80px;
+  width: 100vw;
   color: white;
-  border: 1px solid white;
+
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
+  margin-left: -10px;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.03) 48.44%, rgba(255, 255, 255, 0.2) 100%);
+  backdrop-filter: blur(30px);
   z-index: 10;
+  transition: 0.6s;
+
   .menubtn{
     display: flex;
-    border: 1px solid red;
+
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
@@ -20,11 +23,11 @@ div.nav{
   }
   .navtitle{
     display: flex;
-    border: 1px solid yellow;
     align-items: center;
     font-size: 3rem;
     justify-content: center;
     letter-spacing: 2px;
+    
     p{
       transform: translateX(-40px);
       cursor: pointer;
@@ -33,4 +36,5 @@ div.nav{
     }
 
   }
+
 }

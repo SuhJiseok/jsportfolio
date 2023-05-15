@@ -1,16 +1,29 @@
 @import url(../styles/Reset.scss);
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
 }
 .app{
   background-color: #131313;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   color: #ffffff;
   padding: 10px;
   padding-top: 0px;
   font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
   }
+  body {
+    -ms-overflow-style: none;
+}
+ 
+::-webkit-scrollbar {
+    display: none;
+}
+ 

@@ -1,14 +1,46 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import '../styles/MainPage.scss';
 
 import Header from '../components/Header';
 import Hitmap from '../components/Hitmap';
+import Pagelist from '../components/Pagelist';
+import More from '../components/More';
+import Sub1 from '../components/Sub1';
+import ReactIntro from '../components/ReactIntro';
+import Navmenu from '../components/Navmenu';
+import NavMenuContext from '../hooks/NavMenuContext';
 
 
 function MainPage() {
   const pebbleRef = useRef(null);
   const pebbleWrapRef = useRef(null);
+  const { setIsNavOpen } = useContext(NavMenuContext);
 
+  const paragraph = [
+    "이 웹 페이지는 직관적인 인터랙션과 세련된 애니메이션을 통해 사용자 친화적인 탐색을 제공하며, 웹 접근성 지침과 웹표준을 엄격하게 준수합니다. ",
+    <br key="1" />,
+    "자동 배너 기능과 정교한 알고리즘은 사용자가 원활하게 배너를 제어하고 전환할 수 있게 하여 놀라운 시각 경험을 선사합니다.",
+    <br key="2" />,
+    "또한, 'Top 버튼'은 부드러운 스크롤 애니메이션으로 웹 페이지 상단으로 빠르게 이동하게 해줍니다. 이러한 기능들은 웹 페이지의 접근성을 높이고 사용자 경험을 향상시킵니다.",
+    <br key="3" />,
+    "모든 구성 요소는 W3C 유효성 검사를 통과하여 고품질의 웹 경험을 보장합니다. 이 웹 페이지는 사용자에게 탁월한 웹 경험을 선사하는 데 효과적인 역할을 합니다."
+  ];
+  const paragraph2 = [
+    "이 웹 페이지는 세련된 디자인과 탁월한 사용성을 자랑합니다. ",
+    <br key="1" />,
+    "총 6개로 나뉘어진 미디어 쿼리를 통해 사용자가 어떤 사이즈의 화면을 가지고 있던 동일한 최상의 웹 경험을 누릴 수 있습니다.",
+    <br key="2" />,
+    "또한, 자바스크립트를 통한 스크롤 작동을 구현하여 페이지 별로 스크롤을 통해 이동이 가능하게 하여 놀라운 움직임을 보여줍니다.",
+    <br key="3" />,
+    "이 놀라운 사용자 웹 환경을 제공하는 동시에 웹 접근성 지침과 웹 표준을 준수하며, W3C 유효성 검사를 통과하였습니다. 덕분에 사용자는 웹 페이지에서 최상의 사용자 경험을 얻을 수 있습니다."
+  ];
+  const paragraph3 = [
+    "이 웹사이트의 JavaScript 코드는 사용자들에게 독특하고 매력적인  인터렉티브 경험을 제공합니다. 웹사이트의 애니메이션은 섬세한 기술과 디자인 원칙을 결합하여, 방문객들이 웹사이트를 탐험하는 동안 기분 좋은 느낌을 선사합니다.",
+    <br key="1" />,
+    "또한, 이 웹사이트는 이벤트 리스너와 DOM 조작 기술을 사용하여 각 웹 요소에 인터랙션 효과를 부여하였습니다. 이로 인해 사용자가 마우스를 움직이거나 클릭할 때마다 애니메이션이 자연스럽게 나타나 시각적인 즐거움을 선사합니다.",
+    <br key="2" />,
+    "사용자가 쉽게 찾을 수 있는 직관적인 인터페이스를 통해 필요한 정보에 빠르게 접근할 수 있도록 구성되어 있습니다. 이로 인해 사용자들은 편리한 온라인 경험을 누릴 수 있습니다.",
+  ];
 
 
   useEffect(() => {
@@ -32,12 +64,13 @@ function MainPage() {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+
   return (
     <>
     <div>
-    {/* <div className='bgmove'></div>
-    <div className='bgmove2'></div> */}
-      <Header/>
+      <Navmenu/>  
+      <Header onNavClick={() => setIsNavOpen(true)} />
       <h1 className='mainh1'>트렌디하고<br/>
       유저 중심적인<br/>
       프론트엔드 개발자</h1>
@@ -66,6 +99,76 @@ function MainPage() {
       </div>
     </div>
     <Hitmap/>
+    <Pagelist/>
+    <More />
+    <div className='content3_1'>
+      <div className='content3inner'>
+        <div className='dvcontainer'>
+          <div className='imac'>
+            <video width={780} height={440} muted autoPlay loop>
+              <source src="/video/samsungem.mp4" type="video/mp4"></source>
+            </video>
+          </div>
+        </div>
+        <Sub1 h2="삼성전기"  p={paragraph} num="01" />
+      </div>
+      <div className='bar'></div>
+      <h2><span>아름다움</span>과 <span>사용성</span>이 공존하는 웹 경험.</h2>
+    </div>
+
+    <div className='content3_2'>
+      <div className='content3inner'>
+        <div className='dvcontainer'>
+          <div className='imac'>
+          <video width={780} height={440} muted autoPlay loop>
+            <source src="/video/samsungem.mp4" type="video/mp4"></source>
+          </video>
+          </div>
+        </div>
+        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} num="02"/>
+      </div>
+      <div className='bar2'></div>
+      <h2>크기와 관계없는 <span>반응형</span> 웹 경험.</h2>
+      <div className='ipad'>
+        <video width={280} height={240} muted autoPlay loop>
+          <source src="/video/samsungem.mp4" type="video/mp4"></source>
+        </video>
+      </div>
+      <div className='iphone'>
+      <video width={280} height={240} muted autoPlay loop>
+          <source src="/video/samsungem.mp4" type="video/mp4"></source>
+        </video>
+      </div>
+    </div>
+
+    <div className='content3_3'>
+      <div className='content3inner'>
+        <div className='dvcontainer'>
+          <div className='imac'>
+          <video width={780} height={440} muted autoPlay loop>
+            <source src="/video/samsungem.mp4" type="video/mp4"></source>
+          </video>
+          </div>
+        </div>
+        <Sub1 h2="CJ ONE"  p={paragraph3} num="03"/>
+      </div>
+      <h2><span>인터렉티브</span> 웹의 즐거움.</h2>
+      <div className='ipad'>
+        <video width={280} height={240} muted autoPlay loop>
+          <source src="/video/samsungem.mp4" type="video/mp4"></source>
+        </video>
+      </div>
+      <div className='iphone'>
+      <video width={280} height={240} muted autoPlay loop>
+          <source src="/video/samsungem.mp4" type="video/mp4"></source>
+        </video>
+      </div>
+    </div>
+
+    <section>
+      <ReactIntro />
+    </section>
+
     </>
   )
 }
