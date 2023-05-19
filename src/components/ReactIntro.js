@@ -9,10 +9,10 @@ const ReactIntro = () => {
     const imageWrapper = imageWrapperRef.current;
 
     // 이미지 생성 및 DOM에 추가
-    for (let i = 61; i >= 2; i--) {
+    for (let i = 50; i >= 2; i--) {
       const div = document.createElement('div');
       div.className = 'image-container';
-      if (i === 61) div.classList.add('active'); // 첫 번째 이미지는 기본적으로 활성화
+      if (i === 50) div.classList.add('active'); // 첫 번째 이미지는 기본적으로 활성화
 
       const img = document.createElement('img');
       img.src = process.env.PUBLIC_URL + '/images/intro/' + i + '.jpg'; // 이미지 경로를 올바르게 설정하세요.

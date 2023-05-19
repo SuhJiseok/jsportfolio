@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import '../styles/MainPage.scss';
 
 import Header from '../components/Header';
@@ -9,13 +9,26 @@ import Sub1 from '../components/Sub1';
 import ReactIntro from '../components/ReactIntro';
 import Navmenu from '../components/Navmenu';
 import NavMenuContext from '../hooks/NavMenuContext';
+import Bgmove from '../components/Bgmove';
+import Reactinfo from '../components/Reactinfo';
 
+
+const logoImages = Array(7).fill().map((_, i) => `/jsportfolio/images/logo${i + 1}.png`);
+const buttonLabels = ["HTML5", "CSS3", "Javascript", "React", "Illustration", "Photoshop", "Next"];
 
 function MainPage() {
   const pebbleRef = useRef(null);
   const pebbleWrapRef = useRef(null);
   const { setIsNavOpen } = useContext(NavMenuContext);
 
+  const sectionRef = useRef(null);
+  const bgmoveRef = useRef(null);
+
+  const [logoIndex, setLogoIndex] = useState(0);
+
+  
+
+  
   const paragraph = [
     "이 웹 페이지는 직관적인 인터랙션과 세련된 애니메이션을 통해 사용자 친화적인 탐색을 제공하며, 웹 접근성 지침과 웹표준을 엄격하게 준수합니다. ",
     <br key="1" />,
@@ -42,6 +55,8 @@ function MainPage() {
     "사용자가 쉽게 찾을 수 있는 직관적인 인터페이스를 통해 필요한 정보에 빠르게 접근할 수 있도록 구성되어 있습니다. 이로 인해 사용자들은 편리한 온라인 경험을 누릴 수 있습니다.",
   ];
 
+  const content2Ref = useRef(null);
+
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -64,13 +79,76 @@ function MainPage() {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+  useEffect(() => {
 
 
+    const content2Observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            content2Observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.60 }
+    );
+
+    if (content2Ref.current) {
+      content2Observer.observe(content2Ref.current);
+    }
+
+    return () => {
+      if (content2Ref.current) {
+        content2Observer.unobserve(content2Ref.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (bgmoveRef.current) {
+                        bgmoveRef.current.style.display = 'none';
+                    }
+                  observer.unobserve(entry.target);}
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+    }
+
+
+    return () => {
+      if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+      }
+  };
+}, []);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setLogoIndex((logoIndex + 1) % logoImages.length);
+  }, 3000); // changes every 3 seconds
+
+  return () => clearInterval(timer); // This function runs when the component unmounts
+}, [logoIndex]);
+
+
+  const handleButtonClick = (i) => {
+    setLogoIndex(i);
+  };
   return (
     <>
     <div>
       <Navmenu/>  
       <Header onNavClick={() => setIsNavOpen(true)} />
+      <Bgmove ref={bgmoveRef}/>
       <h1 className='mainh1'>트렌디하고<br/>
       유저 중심적인<br/>
       프론트엔드 개발자</h1>
@@ -78,21 +156,24 @@ function MainPage() {
         <p>디지털 아름다움을 선사하는 프론트엔드 개발자<br/> 사용자의 마음을 사로잡는 웹 경험을 창조합니다.<br/>매력 넘치는 디자인과 혁신적인 기술이 결합된<br/> 세련된 웹 환경으로 여러분의 디지털 무대를 한 단계<br/> 업그레이드합니다.</p>
         <div className='pebblewrap' ref={pebbleWrapRef}>
           <div className='pebble' ref={pebbleRef}>
-            <div className='logoimg'></div>
+            <div className='logoimg' style={{backgroundImage: `url(${logoImages[logoIndex]})`}}></div>
           </div>
         </div>
-        <div className='logobtn'>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button> 
-        </div>
+        <div className='btnwrap'>
+          <div className='logobtn'>
+          {logoImages.map((_, i) => (
+            <button 
+              key={i} 
+              onClick={() => handleButtonClick(i)}
+              style={{ backgroundColor: logoIndex === i ? 'white' : 'rgba(217, 217, 217, 0.5)' }}>
+            </button>
+          ))}
+          </div>
+          <p className='btnname'>{buttonLabels[logoIndex]}</p>
+        </div> 
       </div>
       <div className='content2'>
-        <div>
+        <div ref={content2Ref}>
           <h2>단, 5개월 만의 성과</h2>
           <p>많은 시간과 노력을 투자해 HTML5, CSS3, JavaScript, React, TypeScript, 그리고 Next.js 기술들을 배운 개발자입니다. 사용자 중심의 웹 경험을 만들기 위해 끊임없이 학습하고 도전하는 것이 제 열정입니다. 이러한 최첨단 기술들을 통해 디지털 환경에서 여러분의 웹 경험를 높일 수 있는 솔루션을 제공하고자 합니다.</p>
         </div>
@@ -105,9 +186,12 @@ function MainPage() {
       <div className='content3inner'>
         <div className='dvcontainer'>
           <div className='imac'>
-            <video width={780} height={440} muted autoPlay loop>
-              <source src="/video/samsungem.mp4" type="video/mp4"></source>
-            </video>
+            <img src={require(`../images/imac.png`)} alt=""></img>
+            <div className='videocontainer'>
+              <video autoPlay muted loop preoload>
+                <source src="jsportfolio/video/samsungem.mp4" type='video/mp4'></source>
+              </video>
+            </div>
           </div>
         </div>
         <Sub1 h2="삼성전기"  p={paragraph} num="01" />
@@ -119,55 +203,81 @@ function MainPage() {
     <div className='content3_2'>
       <div className='content3inner'>
         <div className='dvcontainer'>
+          
           <div className='imac'>
-          <video width={780} height={440} muted autoPlay loop>
-            <source src="/video/samsungem.mp4" type="video/mp4"></source>
-          </video>
+            <img src={require(`../images/imac.png`)} alt=""></img>
+            <div className='videocontainer'>
+              <video autoPlay muted loop preoload>
+                  <source src="jsportfolio/video/kodsaqpc.mp4" type='video/mp4'></source>
+                </video>
+            </div>
+          </div>
+          <div className='ipad'>
+              <img src={require(`../images/ipad.png`)} alt=""></img>
+              <div className='videocontainer'>
+                <video muted autoPlay loop>
+                  <source src="jsportfolio/video/kosdaqtablet.mp4" type="video/mp4"></source>
+                </video>
+              </div>
+          </div>
+          <div className='iphone'>
+            <img src={require(`../images/iphone.png`)} alt=""></img>
+            <div className='videocontainer'>
+              <video muted autoPlay loop>
+                <source src="jsportfolio/video/kosdaqphone.mp4" type="video/mp4"></source>
+              </video>
+            </div>
           </div>
         </div>
         <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} num="02"/>
       </div>
       <div className='bar2'></div>
       <h2>크기와 관계없는 <span>반응형</span> 웹 경험.</h2>
-      <div className='ipad'>
-        <video width={280} height={240} muted autoPlay loop>
-          <source src="/video/samsungem.mp4" type="video/mp4"></source>
-        </video>
-      </div>
-      <div className='iphone'>
-      <video width={280} height={240} muted autoPlay loop>
-          <source src="/video/samsungem.mp4" type="video/mp4"></source>
-        </video>
-      </div>
     </div>
-
+  <section className='content3wrap'>
     <div className='content3_3'>
       <div className='content3inner'>
         <div className='dvcontainer'>
           <div className='imac'>
-          <video width={780} height={440} muted autoPlay loop>
-            <source src="/video/samsungem.mp4" type="video/mp4"></source>
-          </video>
+            <img src={require(`../images/imac.png`)} alt=""></img>
+            <div className='videocontainer'>
+              <video autoPlay muted loop preoload>
+                  <source src="jsportfolio/video/cjonepc.mp4" type='video/mp4'></source>
+                </video>
+            </div>
+          </div>
+          <div className='ipad'>
+              <img src={require(`../images/ipad.png`)} alt=""></img>
+              <div className='videocontainer'>
+                <video muted autoPlay loop>
+                  <source src="jsportfolio/video/cjonetablet.mp4" type="video/mp4"></source>
+                </video>
+              </div>
+          </div>
+          <div className='iphone'>
+            <img src={require(`../images/iphone.png`)} alt=""></img>
+            <div className='videocontainer'>
+              <video muted autoPlay loop>
+                <source src="jsportfolio/video/cjonephone.mp4" type="video/mp4"></source>
+              </video>
+            </div>
           </div>
         </div>
         <Sub1 h2="CJ ONE"  p={paragraph3} num="03"/>
       </div>
       <h2><span>인터렉티브</span> 웹의 즐거움.</h2>
-      <div className='ipad'>
-        <video width={280} height={240} muted autoPlay loop>
-          <source src="/video/samsungem.mp4" type="video/mp4"></source>
-        </video>
-      </div>
-      <div className='iphone'>
-      <video width={280} height={240} muted autoPlay loop>
-          <source src="/video/samsungem.mp4" type="video/mp4"></source>
-        </video>
-      </div>
     </div>
+  </section>
+  <section className='reactintro' ref={sectionRef}>
+    <ReactIntro />
+  </section>
+  <section className='reactinfo'>
+    <Reactinfo />
+  </section>
+  <section className='netflixcontainer'>
+    
 
-    <section>
-      <ReactIntro />
-    </section>
+  </section>
 
     </>
   )

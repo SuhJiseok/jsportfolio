@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 .pagelist{
-    border: 1px solid greenyellow;
+
     margin-left: -10px;
     position: relative;
     margin-top: 450px;
@@ -17,22 +17,35 @@
         color:transparent;
         font-weight: 900;
 
+        width: 100%;
+
+    }
+    ul>li:hover{
+        background: linear-gradient(to right, transparent 50%, #9EFF00 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: #001816;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 4px #001816;
+        transition:  1s;
+        cursor: pointer;
     }
     ul>li:nth-of-type(2){
         letter-spacing: -0.04em;
-        margin-right: 20px;
+  
+
     }
     ul>li:nth-of-type(3){
-        letter-spacing: 0.63em;
-        margin-left: 100px;
+
+
     }
     ul>li:nth-of-type(4){
-        letter-spacing: 0.59em;
-        margin-left: 100px;
+
 
     }
     ul>li:nth-of-type(5){
-        letter-spacing: 0.58em;
-        margin-left: 110px;
+        letter-spacing: 0.3em;
+
     }
 }
