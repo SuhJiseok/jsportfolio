@@ -229,7 +229,7 @@ useEffect(() => {
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
               <video autoPlay muted loop preoload>
-                <source src="jsportfolio/video/samsungem.mp4" type='video/mp4'></source>
+                <source src="/jsportfolio/video/samsungem.mp4" type='video/mp4'></source>
               </video>
             </div>
           </div>
@@ -247,7 +247,7 @@ useEffect(() => {
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
               <video autoPlay muted loop preoload>
-                  <source src="jsportfolio/video/kodsaqpc.mp4" type='video/mp4'></source>
+                  <source src="/jsportfolio/video/kodsaqpc.mp4" type='video/mp4'></source>
                 </video>
             </div>
           </div>
@@ -256,7 +256,7 @@ useEffect(() => {
               <img src={require(`../images/ipad.png`)} alt=""></img>
               <div className='videocontainer'>
                 <video muted autoPlay loop>
-                  <source src="jsportfolio/video/kosdaqtablet.mp4" type="video/mp4"></source>
+                  <source src="/jsportfolio/video/kosdaqtablet.mp4" type="video/mp4"></source>
                 </video>
               </div>
           </div>
@@ -265,7 +265,7 @@ useEffect(() => {
             <img src={require(`../images/iphone.png`)} alt=""></img>
             <div className='videocontainer'>
               <video muted autoPlay loop>
-                <source src="jsportfolio/video/kosdaqphone.mp4" type="video/mp4"></source>
+                <source src="/jsportfolio/video/kosdaqphone.mp4" type="video/mp4"></source>
               </video>
             </div>
           </div>
@@ -282,7 +282,7 @@ useEffect(() => {
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
               <video autoPlay muted loop preoload>
-                  <source src="jsportfolio/video/cjonepc.mp4" type='video/mp4'></source>
+                  <source src="/jsportfolio/video/cjonepc.mp4" type='video/mp4'></source>
                 </video>
             </div>
           </div>
@@ -290,7 +290,7 @@ useEffect(() => {
               <img src={require(`../images/ipad.png`)} alt=""></img>
               <div className='videocontainer'>
                 <video muted autoPlay loop>
-                  <source src="jsportfolio/video/cjonetablet.mp4" type="video/mp4"></source>
+                  <source src="/jsportfolio/video/cjonetablet.mp4" type="video/mp4"></source>
                 </video>
               </div>
           </div>
@@ -298,7 +298,7 @@ useEffect(() => {
             <img src={require(`../images/iphone.png`)} alt=""></img>
             <div className='videocontainer'>
               <video muted autoPlay loop>
-                <source src="jsportfolio/video/cjonephone.mp4" type="video/mp4"></source>
+                <source src="/jsportfolio/video/cjonephone.mp4" type="video/mp4"></source>
               </video>
             </div>
           </div>

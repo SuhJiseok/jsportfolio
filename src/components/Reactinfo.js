@@ -1,23 +1,20 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../styles/Reactinfo.scss'
 
 
-
 function Reactinfo() {
+  const [isIntersecting, setIntersecting] = useState(false);
   const logoContainerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-            entry.target.querySelector('.reactlogo').classList.add('animate');
-            observer.unobserve(entry.target);
-          }
-        });
+    let observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIntersecting(true);
+        }
       },
       {
-        threshold: 0.6
+        threshold: 0.6,
       }
     );
 
@@ -26,9 +23,7 @@ function Reactinfo() {
     }
 
     return () => {
-      if (logoContainerRef.current) {
-        observer.unobserve(logoContainerRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 
@@ -36,7 +31,7 @@ function Reactinfo() {
     <>
     <div className='reactinfo'>
       <div className='logocontainer' ref={logoContainerRef}>
-        <div class='reactlogo'>
+      <div className={`reactlogo ${isIntersecting ? 'animate' : ''}`}>
           <span class='point'></span>
           <span class='ring-1'></span>
           <span class='ring-2'></span>
