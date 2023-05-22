@@ -1,9 +1,55 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../styles/Sub2.scss';
 import Magic from './Magic';
 
 
 function Sub2() {
+  const dvContainerRef4 = useRef(null);
+  const dvContainerRef5 = useRef(null);
+  const opacityRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          } 
+        });
+      },
+      {
+        threshold: 0.5, 
+      }
+    );
+
+    const opacityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          } 
+        });
+      },
+      {
+        threshold: 0.8, 
+      }
+    );
+
+    observer.observe(dvContainerRef4.current);
+    observer.observe(dvContainerRef5.current);
+    opacityObserver.observe(opacityRef.current);
+
+    return () => {
+      observer.unobserve(dvContainerRef4.current);
+      observer.unobserve(dvContainerRef5.current);
+      opacityObserver.unobserve(opacityRef.current);
+    };
+  }, []); 
+
+
+
   return (
     <>
     <div className='sub2_1'>
@@ -13,7 +59,7 @@ function Sub2() {
 
     <div className='content3inner'>
       <div></div>
-      <div className='dvcontainer'>
+      <div className='dvcontainer' ref={dvContainerRef4}>
         <div className='imac'>
           <img src={require(`../images/imac.png`)} alt=""></img>
           <div className='videocontainer'>
@@ -26,7 +72,7 @@ function Sub2() {
     </div>
     <h2>리액트의 <span><Magic /></span> 검색 마법, 영화 찾기 업그레이드 </h2>
     <div className='content3inner2'>
-      <div className='dvcontainer2'>
+      <div className='dvcontainer2' ref={dvContainerRef5}>
         <div className='ipad'>
           <img src={require(`../images/ipad.png`)} alt=""></img>
           <div className='videocontainer'>
@@ -36,7 +82,7 @@ function Sub2() {
           </div>
         </div>
       </div>
-      <div>
+      <div ref={opacityRef} style={{opacity: 0, transform: 'translateY(40px)', transition: 'all 1s'}}>
         <p>리액트를 통해 구현된 검색 기능은 사용자가 원하는 영화를 찾을 수 있게 도와줍니다. 빠르고 정확한 검색 결과를 보여주기 위해 <span>디바운싱 기법</span>과 <span>API 통신</span>을 활용하며, 사용자에게 즉각적인 반응성을 제공합니다. 이를 통해 사용자가 쉽고 편리하게 원하는 영화를 찾아볼 수 있는 경험을 선사합니다.</p>
       </div>
     </div>

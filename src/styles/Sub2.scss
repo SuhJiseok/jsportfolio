@@ -35,11 +35,18 @@
   display: grid;
   grid-template-columns: 0.75fr 1fr;
   margin-left: -10px;
+  >div.dvcontainer.appear{
+   opacity: 1;
+   transform: translateX(0);
 
+  }
   >div.dvcontainer{
     position: relative;
-    opacity: 1;
     margin-right: 20px;
+    opacity: 0;
+    transform: translateX(250px);
+  transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+
 
     >div.imac{ 
       position: relative;
@@ -114,10 +121,16 @@
     }
   }
   }
+  >div.dvcontainer2.appear{
+
+    transform: translateX(0px);
+  }
   >div.dvcontainer2{
     position: relative;
     border: 1px solid red;
     margin-left: 120px;
+  
+    transition: transform 1s ease-in-out;
     >div.ipad{ 
       position: relative;
       width: 95%;
@@ -228,3 +241,4 @@
   }
  
 }
+

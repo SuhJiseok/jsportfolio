@@ -199,3 +199,7 @@
     animation: r3 1.5s ease 2s forwards;
   }
 }
+.animate {
+  /* Add your animations */
+  animation: box-animate 10s linear infinite;
+}

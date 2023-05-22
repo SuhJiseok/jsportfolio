@@ -15,7 +15,7 @@ function App() {
 
    // App 컴포넌트가 마운트되면 일정 시간 후 로딩 상태를 false로 설정
    useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false),2500); // 5초 후 로딩 상태 종료
+    const timer = setTimeout(() => setIsLoading(false),1500); // 5초 후 로딩 상태 종료
     return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 클리어
   }, []);
 
