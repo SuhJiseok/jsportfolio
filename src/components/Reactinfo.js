@@ -1,14 +1,41 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../styles/Reactinfo.scss'
 
 
 
 function Reactinfo() {
+  const logoContainerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+            entry.target.querySelector('.reactlogo').classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.6
+      }
+    );
+
+    if (logoContainerRef.current) {
+      observer.observe(logoContainerRef.current);
+    }
+
+    return () => {
+      if (logoContainerRef.current) {
+        observer.unobserve(logoContainerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
     <div className='reactinfo'>
-      <div className='logocontainer'>
-        {/* <img src='jsportfolio/images/Reactlogo.png' alt=''></img> */}
+      <div className='logocontainer' ref={logoContainerRef}>
         <div class='reactlogo'>
           <span class='point'></span>
           <span class='ring-1'></span>

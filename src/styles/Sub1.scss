@@ -3,10 +3,12 @@
 .sub1{
 
   width: 63%;
-  margin-left: 70px;
+  position: relative;
+  left: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid blue;
 
   >h2{
     font-size: 2.8rem;

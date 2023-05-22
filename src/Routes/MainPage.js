@@ -6,11 +6,15 @@ import Hitmap from '../components/Hitmap';
 import Pagelist from '../components/Pagelist';
 import More from '../components/More';
 import Sub1 from '../components/Sub1';
-import ReactIntro from '../components/ReactIntro';
+
 import Navmenu from '../components/Navmenu';
 import NavMenuContext from '../hooks/NavMenuContext';
 import Bgmove from '../components/Bgmove';
 import Reactinfo from '../components/Reactinfo';
+import Loading from '../components/Loading';
+import Sub2 from '../components/Sub2';
+import Magic from '../components/Magic';
+import Sub3 from '../components/Sub3';
 
 
 const logoImages = Array(7).fill().map((_, i) => `/jsportfolio/images/logo${i + 1}.png`);
@@ -143,6 +147,42 @@ useEffect(() => {
   const handleButtonClick = (i) => {
     setLogoIndex(i);
   };
+
+  const dvContainerRef1 = useRef(null);
+  const dvContainerRef2 = useRef(null);
+  const dvContainerRef3 = useRef(null);
+
+  // 이 Observer는 .dvcontainer 가 화면에 등장할 때 동작합니다.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          } else {
+            entry.target.classList.remove('appear');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(dvContainerRef1.current);
+    observer.observe(dvContainerRef2.current);
+    observer.observe(dvContainerRef3.current);
+
+    return () => {
+      observer.unobserve(dvContainerRef1.current);
+      observer.unobserve(dvContainerRef2.current);
+      observer.unobserve(dvContainerRef3.current);
+    };
+  }, []);
+
+
+
+  
   return (
     <>
     <div>
@@ -182,9 +222,9 @@ useEffect(() => {
     <Hitmap/>
     <Pagelist/>
     <More />
-    <div className='content3_1'>
+    <div className='content3_1' >
       <div className='content3inner'>
-        <div className='dvcontainer'>
+        <div className='dvcontainer' ref={dvContainerRef1}>
           <div className='imac'>
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
@@ -194,15 +234,14 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="삼성전기"  p={paragraph} num="01" />
+        <Sub1 h2="삼성전기"  p={paragraph}  />
       </div>
-      <div className='bar'></div>
       <h2><span>아름다움</span>과 <span>사용성</span>이 공존하는 웹 경험.</h2>
     </div>
 
     <div className='content3_2'>
       <div className='content3inner'>
-        <div className='dvcontainer'>
+        <div className='dvcontainer' ref={dvContainerRef2}>
           
           <div className='imac'>
             <img src={require(`../images/imac.png`)} alt=""></img>
@@ -212,6 +251,7 @@ useEffect(() => {
                 </video>
             </div>
           </div>
+
           <div className='ipad'>
               <img src={require(`../images/ipad.png`)} alt=""></img>
               <div className='videocontainer'>
@@ -220,6 +260,7 @@ useEffect(() => {
                 </video>
               </div>
           </div>
+
           <div className='iphone'>
             <img src={require(`../images/iphone.png`)} alt=""></img>
             <div className='videocontainer'>
@@ -229,15 +270,14 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} num="02"/>
+        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} />
       </div>
-      <div className='bar2'></div>
       <h2>크기와 관계없는 <span>반응형</span> 웹 경험.</h2>
     </div>
   <section className='content3wrap'>
     <div className='content3_3'>
       <div className='content3inner'>
-        <div className='dvcontainer'>
+        <div className='dvcontainer' ref={dvContainerRef3}>
           <div className='imac'>
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
@@ -263,20 +303,19 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="CJ ONE"  p={paragraph3} num="03"/>
+        <Sub1 h2="CJ ONE"  p={paragraph3} />
       </div>
       <h2><span>인터렉티브</span> 웹의 즐거움.</h2>
     </div>
-  </section>
-  <section className='reactintro' ref={sectionRef}>
-    <ReactIntro />
   </section>
   <section className='reactinfo'>
     <Reactinfo />
   </section>
   <section className='netflixcontainer'>
-    
-
+    <Sub2 />
+  </section>
+  <section className='gptcontainer'>
+    <Sub3 />
   </section>
 
     </>

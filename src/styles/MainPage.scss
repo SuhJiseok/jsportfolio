@@ -184,7 +184,20 @@
 }
 
 
+//삼성전기
 
+
+
+.dvcontainer {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.dvcontainer.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
 .content3_1{
 
   height: 100vh;
@@ -196,9 +209,8 @@
   >h2{
     font-size: 7rem;
     position: relative;
-    top: -640px;
-    left: 980px;
-
+    top: -590px;
+    left: 1110px;
     width: 31%;
     >span:first-of-type{
       background: linear-gradient(180deg, #00FF94 0%, rgba(40, 255, 100, 0.14) 100%);
@@ -224,12 +236,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 0.1fr;
   margin-left: -10px;
+  border: 1px solid yellowgreen;
 
   >div.dvcontainer{
     position: relative;
-
-
-
+    border: 1px solid red;
+    left: 100px;
     >div.imac{ 
       position: relative;
       width: 95%;
@@ -264,7 +276,7 @@
   }
  
 }
-
+//코스닥 글로벌
 .content3_2{
   height: 100vh;
   margin-left: -10px;
@@ -278,8 +290,8 @@
   >h2{
     font-size: 7rem;
     position: relative;
-    top: -640px;
-    left: 980px;
+    top: -590px;
+    left: 1110px;
     width: 26%;
 
     >span:last-of-type{
@@ -355,6 +367,7 @@
   }
 
 }
+//cjone
 .content3_3{
   height: 100vh;
   margin-left: -10px;
@@ -366,8 +379,8 @@
   >h2{
     font-size: 7rem;
     position: relative;
-    top: -640px;
-    left: 980px;
+    top: -590px;
+    left: 1110px;
     width: 26%;
 
     >span:last-of-type{

@@ -9,6 +9,8 @@
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   grid-template-rows: 1.5fr 1fr;
   margin-left: -10px;
+
+
   .reactinfo>div{
 
     display: flex;
@@ -17,11 +19,12 @@
     padding: 30px;
 
    h2{
-    font-size: 4.3rem;
+    font-size: 4rem;
+
 
    }
    p{
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: rgba(189, 189, 189, 0.8);
     margin-top: 10px;
    }
@@ -30,7 +33,7 @@
     align-items: center;
     h2{
       width: 75%;
-      font-size: 4.7rem;
+      font-size: 4rem;
     }
   }
  .logocontainer{
@@ -42,15 +45,15 @@
     position: relative;
     width: 80%;
     height: 88%;
-    animation: box-animate 10s linear infinite;
+
   }
   
   .point {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 15%;
-    height: 15%;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: #17F4CD;
     transform: translate(-50%, -50%) scale(0);
@@ -179,3 +182,20 @@
   
 }
 
+.reactlogo.animate {
+  animation: box-animate 10s linear infinite;
+  
+  .point {
+    animation: point-animate 0.75s ease 1s forwards;
+  }
+
+  .ring-1 {
+    animation: r1 1.5s ease 1.75s forwards;
+  }
+  .ring-2 {
+    animation: r2 1.5s ease 1.85s forwards;
+  }
+  .ring-3 {
+    animation: r3 1.5s ease 2s forwards;
+  }
+}

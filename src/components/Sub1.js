@@ -9,13 +9,7 @@ function Sub1(props) {
       <p>{props.p}</p>
       <span>웹 접근성 확인하기</span>
     </div>
-    <div  className='scrollwrap'>
-      <p>{props.num}</p>
-      <div className='subscroll'>
 
-      </div>
-      <p>03</p>
-    </div>
     </>
   )
 }
