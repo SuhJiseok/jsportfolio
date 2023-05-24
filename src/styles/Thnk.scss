@@ -1,0 +1,66 @@
+@import url(../styles/App.scss);
+
+.parent {
+  position: relative;
+  padding-top: 8vw;
+  pointer-events: none;
+  // background: black;
+  // border: 1px solid red;
+  background: transparent;
+}
+
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // background: black;
+  // border-radius: 0px 0px 30px 30px;
+  // border: 1px solid red;
+  background: transparent;
+}
+
+.thnkcontainer {
+  display: flex;
+  overflow: hidden;
+  >span {
+    font-size: 10vw;
+    white-space: nowrap;
+    padding-right: 3vw;
+    // -webkit-text-stroke: 3px linear rgba(0,255,102,1) rgba(0,255,102,1);
+    color:transparent;
+    // text-transform: capitalize;
+    
+    -webkit-text-fill-color: transparent;
+  }
+  >span:nth-of-type(odd){
+    background: linear-gradient(95.21deg, #00FF85 5.87%, #F4DF23 95.72%);
+    -webkit-background-clip: text;
+    text-transform: capitalize;
+    color: transparent;
+    -webkit-text-stroke: 8px transparent;
+  }
+  >span:nth-of-type(even){
+    background: linear-gradient(95.21deg, #00FF85 5.87%, #F4DF23 95.72%);
+    -webkit-background-clip: text;
+    text-transform: capitalize;
+    color: transparent;
+    -webkit-text-stroke: 8px transparent;
+  }
+  
+  .slide-text-right {
+    will-change: transform;
+    animation: slide-text-right 4s linear infinite;
+  }
+  
+}
+
+
+@keyframes slide-text-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

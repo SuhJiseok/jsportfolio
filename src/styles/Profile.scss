@@ -1,0 +1,114 @@
+@import url(../styles/App.scss);
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+
+
+
+.profilecontainer{
+  height: 100vh;
+  // border: 1px solid yellow;
+  
+  font-family: inter;
+  margin-top: 400px;
+  .profilewrap{
+    display: flex;
+    justify-content: center;
+  }
+  .profilewrap>.profilebox{
+    z-index: 10;
+    width: 25%;
+    height: 750px;
+    position: relative;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+    background-color:  #E9E9D1;
+    backdrop-filter: blur(20px);
+    // border: 6px solid black;
+    padding: 40px;
+    >img{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 6px solid black;
+
+    }
+    >.profiledetail{
+      border: 4px solid black;
+      width: 80%;
+      height: 40%;
+      border-radius: 40px;
+      box-shadow: inset 2px 2px 10px 2px rgba(0, 0, 0, 0.29);
+      background:#171717;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      >p{
+        font-size: 2.5rem;
+        width: 100%;
+        position: relative;
+        font-weight: bold;
+
+        color: white;
+      }
+
+      
+    }
+  }
+}
+
+.profilewrap>div>h2{
+  font-size: 7rem;
+  position: relative;
+  color: black;
+}
+.profiledetail2{
+  border: 5px solid black;
+  width: 30%;
+  position: relative;
+  background: #202020;
+  border-radius: 40px;
+  transform: translateX(-60px);
+  z-index: 5;
+  padding-left: 80px;
+  >p{
+    font-size: 6rem;
+    margin-top: 40px;
+  }
+  >img.skillsimg{
+    width: 90%;
+    margin-top: 20px;
+
+  }
+  >img.etcimg{
+    width: 50%;
+    margin-top: 20px;
+  }
+  >p:nth-of-type(2){
+    margin-top: 80px;
+  }
+  >.introduce{
+    width: 80%;
+    border: 4px solid black;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    >p{
+      margin-top: 10px;
+      >span{
+        font-size: 1rem;
+      }
+    }
+  }
+}

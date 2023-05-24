@@ -87,11 +87,11 @@ useEffect(() => {
             <img src={require(`../images/iphone.png`)} alt=""></img>
             <div className='videocontainer'>
               <video autoPlay muted loop preoload>
-                <source src="jsportfolio/video/aichat.mp4" type='video/mp4'></source>
+                <source src="/jsportfolio/video/aichat.mp4" type='video/mp4'></source>
               </video>
             </div>
           </div>
-          <div className='gptsub' ref={gptSubRef} style={{opacity: 0, transform: 'translateY(-50px)', transition: 'all 2s'}}>
+          <div className='gptsub' ref={gptSubRef} style={{opacity: 0, transform: 'translateY(-70px)', transition: 'all 3s'}}>
             <p>React.js의 강력한 구조와 <span>axios</span>의 빠른 통신, <span>Firebase</span>의 실시간 데이터베이스, <span>SCSS</span>의 유연한 스타일링, 그리고 <span>OpenAI</span> 의 마법같은 인공지능 챗봇이 결합된 이 채팅 애플리케이션은 사용자에게 놀라운 대화 경험을 선사합니다. 실시간 메시지 전달, 이미지 공유, 인공지능 챗봇과의 대화 등 다양한 기능을 경험하실 수 있습니다. 새로운 대화의 세계를 지금 바로 만나보세요.</p>
           </div>
         </div>

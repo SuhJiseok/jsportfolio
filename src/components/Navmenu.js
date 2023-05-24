@@ -31,21 +31,21 @@ function Navmenu() {
         <li>INTRO
           <ul>
             <li onClick={() => handleScroll(0)}>COVER</li>
-            <li onClick={() => handleScroll(1500)}>INTRODUCTION</li>
+            <li onClick={() => handleScroll(1300)}>INTRODUCTION</li>
           </ul>
         </li>
         <li>PROJECT
           <ul>
-            <li onClick={() => handleScroll(6700)}>SAMSUNG EM</li>
-            <li onClick={() => handleScroll(7700)}>KOSDAQ GLOBAL</li>
-            <li onClick={() => handleScroll(8600)}>CJ ONE</li>
-            <li onClick={() => handleScroll(10500)}>NETFLIX</li>
-            <li onClick={() => handleScroll(14000)}>AI_CHAT</li>
+            <li onClick={() => handleScroll(7900)}>SAMSUNG EM</li>
+            <li onClick={() => handleScroll(8900)}>KOSDAQ GLOBAL</li>
+            <li onClick={() => handleScroll(9900)}>CJ ONE</li>
+            <li onClick={() => handleScroll(12000)}>NETFLIX</li>
+            <li onClick={() => handleScroll(15800)}>AI_CHAT</li>
           </ul>
         </li>
         <li>OTHERS
           <ul>
-            <li>EMOTICONS</li>
+            <li onClick={() => handleScroll(18800)}>Contact</li>
           </ul>
         </li>
       </ul>

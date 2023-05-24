@@ -15,6 +15,9 @@ import Loading from '../components/Loading';
 import Sub2 from '../components/Sub2';
 import Magic from '../components/Magic';
 import Sub3 from '../components/Sub3';
+import Profile from '../components/Profile';
+import Thnk from '../components/Thnk';
+import Contact from '../components/Contact';
 
 
 const logoImages = Array(7).fill().map((_, i) => `/jsportfolio/images/logo${i + 1}.png`);
@@ -31,32 +34,46 @@ function MainPage() {
   const [logoIndex, setLogoIndex] = useState(0);
 
   
+ const headline =[
+  "아름다움과 사용성이",
+  <br key="1" />,
+  "공존하는 웹 경험"
+ ]
+ const headline2 =[
+  "크기와 관계없는",
+  <br key="1" />,
+  "반응형 웹 경험"
+ ]
 
+ const headline3 =[
+  "인터렉티브 웹의",
+  <br key="1" />,
+  "즐거움"
+ ]
   
   const paragraph = [
-    "이 웹 페이지는 직관적인 인터랙션과 세련된 애니메이션을 통해 사용자 친화적인 탐색을 제공하며, 웹 접근성 지침과 웹표준을 엄격하게 준수합니다. ",
+    "HTML/CSS W3C 웹 접근성 검사 통과 ",
     <br key="1" />,
-    "자동 배너 기능과 정교한 알고리즘은 사용자가 원활하게 배너를 제어하고 전환할 수 있게 하여 놀라운 시각 경험을 선사합니다.",
+    "Javascript 와 css를 통한 탑다운 메뉴 구현 ",
     <br key="2" />,
-    "또한, 'Top 버튼'은 부드러운 스크롤 애니메이션으로 웹 페이지 상단으로 빠르게 이동하게 해줍니다. 이러한 기능들은 웹 페이지의 접근성을 높이고 사용자 경험을 향상시킵니다.",
+    "스크롤 addeventlistener를 통한 화면 구성 표현 조절 ",
     <br key="3" />,
-    "모든 구성 요소는 W3C 유효성 검사를 통과하여 고품질의 웹 경험을 보장합니다. 이 웹 페이지는 사용자에게 탁월한 웹 경험을 선사하는 데 효과적인 역할을 합니다."
   ];
   const paragraph2 = [
-    "이 웹 페이지는 세련된 디자인과 탁월한 사용성을 자랑합니다. ",
+    "HTML/CSS W3C 웹 접근성 검사 통과 ",
     <br key="1" />,
-    "총 6개로 나뉘어진 미디어 쿼리를 통해 사용자가 어떤 사이즈의 화면을 가지고 있던 동일한 최상의 웹 경험을 누릴 수 있습니다.",
+    "media query를 이용한 반응형 페이지 구현",
     <br key="2" />,
-    "또한, 자바스크립트를 통한 스크롤 작동을 구현하여 페이지 별로 스크롤을 통해 이동이 가능하게 하여 놀라운 움직임을 보여줍니다.",
+    "Javascript 와 css를 통한 탑다운 메뉴 구현 ",
     <br key="3" />,
-    "이 놀라운 사용자 웹 환경을 제공하는 동시에 웹 접근성 지침과 웹 표준을 준수하며, W3C 유효성 검사를 통과하였습니다. 덕분에 사용자는 웹 페이지에서 최상의 사용자 경험을 얻을 수 있습니다."
+    "window.scroll 를 통한 스크롤 시 화면 이동 제어 "
   ];
   const paragraph3 = [
-    "이 웹사이트의 JavaScript 코드는 사용자들에게 독특하고 매력적인  인터렉티브 경험을 제공합니다. 웹사이트의 애니메이션은 섬세한 기술과 디자인 원칙을 결합하여, 방문객들이 웹사이트를 탐험하는 동안 기분 좋은 느낌을 선사합니다.",
+    "HTML/CSS W3C 웹 접근성 검사 통과",
     <br key="1" />,
-    "또한, 이 웹사이트는 이벤트 리스너와 DOM 조작 기술을 사용하여 각 웹 요소에 인터랙션 효과를 부여하였습니다. 이로 인해 사용자가 마우스를 움직이거나 클릭할 때마다 애니메이션이 자연스럽게 나타나 시각적인 즐거움을 선사합니다.",
+    "media query를 이용한 반응형 페이지 구현",
     <br key="2" />,
-    "사용자가 쉽게 찾을 수 있는 직관적인 인터페이스를 통해 필요한 정보에 빠르게 접근할 수 있도록 구성되어 있습니다. 이로 인해 사용자들은 편리한 온라인 경험을 누릴 수 있습니다.",
+    "이벤트 리스너를 통한 페이지 요소 애니메이션 효과 부여",
   ];
 
   const content2Ref = useRef(null);
@@ -212,10 +229,13 @@ useEffect(() => {
           <p className='btnname'>{buttonLabels[logoIndex]}</p>
         </div> 
       </div>
+      <section className='profilecontainer'>
+          <Profile />
+      </section>
       <div className='content2'>
         <div ref={content2Ref}>
           <h2>단, 5개월 만의 성과</h2>
-          <p>많은 시간과 노력을 투자해 HTML5, CSS3, JavaScript, React, TypeScript, 그리고 Next.js 기술들을 배운 개발자입니다. 사용자 중심의 웹 경험을 만들기 위해 끊임없이 학습하고 도전하는 것이 제 열정입니다. 이러한 최첨단 기술들을 통해 디지털 환경에서 여러분의 웹 경험를 높일 수 있는 솔루션을 제공하고자 합니다.</p>
+          <p> 사용자 중심의 웹 경험을 만들기 위해 끊임없이 학습하고 도전하는 것이 제 열정입니다. 디지털 환경에서 여러분의 웹 경험를 높일 수 있는 솔루션을 제공하고자 합니다.</p>
         </div>
       </div>
     </div>
@@ -234,9 +254,9 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="삼성전기"  p={paragraph}  />
+        <Sub1 h2="삼성전기"  p={paragraph} h3={headline} id="sam" githubUrl="https://github.com/SuhJiseok/samsungsem"/>
       </div>
-      <h2><span>아름다움</span>과 <span>사용성</span>이 공존하는 웹 경험.</h2>
+
     </div>
 
     <div className='content3_2'>
@@ -246,7 +266,7 @@ useEffect(() => {
           <div className='imac'>
             <img src={require(`../images/imac.png`)} alt=""></img>
             <div className='videocontainer'>
-              <video autoPlay muted loop preoload>
+              <video muted autoPlay loop >
                   <source src="/jsportfolio/video/kodsaqpc.mp4" type='video/mp4'></source>
                 </video>
             </div>
@@ -270,9 +290,9 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} />
+        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} h3={headline2} id="kos" githubUrl="https://github.com/SuhJiseok/kosdaqglobal"/>
       </div>
-      <h2>크기와 관계없는 <span>반응형</span> 웹 경험.</h2>
+
     </div>
   <section className='content3wrap'>
     <div className='content3_3'>
@@ -303,9 +323,8 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="CJ ONE"  p={paragraph3} />
+        <Sub1 h2="CJ ONE"  p={paragraph3} h3={headline3} id="cj" githubUrl="https://github.com/SuhJiseok/CJone" />
       </div>
-      <h2><span>인터렉티브</span> 웹의 즐거움.</h2>
     </div>
   </section>
   <section className='reactinfo'>
@@ -317,7 +336,10 @@ useEffect(() => {
   <section className='gptcontainer'>
     <Sub3 />
   </section>
-
+  <Thnk />
+  <section className='Contactcontainer'>
+  <Contact />
+  </section>
     </>
   )
 }

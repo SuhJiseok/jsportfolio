@@ -7,7 +7,8 @@ function Sub2() {
   const dvContainerRef4 = useRef(null);
   const dvContainerRef5 = useRef(null);
   const opacityRef = useRef(null);
-
+  const headingRef = useRef(null);
+  const dvContainerRef6 = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,11 +41,14 @@ function Sub2() {
     observer.observe(dvContainerRef4.current);
     observer.observe(dvContainerRef5.current);
     opacityObserver.observe(opacityRef.current);
-
+    observer.observe(headingRef.current);
+    observer.observe(dvContainerRef6.current);
     return () => {
       observer.unobserve(dvContainerRef4.current);
       observer.unobserve(dvContainerRef5.current);
       opacityObserver.unobserve(opacityRef.current);
+      observer.unobserve(headingRef.current);
+      observer.unobserve(dvContainerRef6.current);
     };
   }, []); 
 
@@ -63,21 +67,21 @@ function Sub2() {
         <div className='imac'>
           <img src={require(`../images/imac.png`)} alt=""></img>
           <div className='videocontainer'>
-            <video autoPlay muted loop preoload>
-              <source src="jsportfolio/video/netflixpc.mp4" type='video/mp4'></source>
+            <video autoPlay muted loop>
+              <source src="/jsportfolio/video/netflixpc.mp4" type='video/mp4'></source>
             </video>
           </div>
         </div>
       </div>
     </div>
-    <h2>리액트의 <span><Magic /></span> 검색 마법, 영화 찾기 업그레이드 </h2>
+    <h2 ref={headingRef}>리액트의 <span><Magic /></span> 검색 마법, 영화 찾기 업그레이드 </h2>
     <div className='content3inner2'>
       <div className='dvcontainer2' ref={dvContainerRef5}>
         <div className='ipad'>
           <img src={require(`../images/ipad.png`)} alt=""></img>
           <div className='videocontainer'>
             <video autoPlay muted loop preoload>
-              <source src="jsportfolio/video/netflixtablet.mp4" type='video/mp4'></source>
+              <source src="/jsportfolio/video/netflixtablet.mp4" type='video/mp4'></source>
             </video>
           </div>
         </div>
@@ -91,12 +95,12 @@ function Sub2() {
           <h2>영화 속 세계, 리액트로<br/>들여다보기</h2>
           <p>MovieModal 컴포넌트는 <span>React</span>의 <span>useState</span>와 <span>useEffect 훅</span>, 그리고 <span>axios</span>가 마법처럼 작동하여 영화 상세 정보를 획득합니다. 사용자는 간단한 클릭만으로도 정보의 대화를 나누고, YouTube 트레일러로 영화의 세계에 빠져드는 황홀한 경험을 누릴 수 있습니다.</p>
         </div>
-        <div className='dvcontainer3'>
+        <div className='dvcontainer3'  ref={dvContainerRef6}>
           <div className='iphone'>
             <img src={require(`../images/iphone.png`)} alt=""></img>
             <div className='videocontainer'>
               <video autoPlay muted loop preoload>
-                <source src="jsportfolio/video/netflixphone.mp4" type='video/mp4'></source>
+                <source src="/jsportfolio/video/netflixphone.mp4" type='video/mp4'></source>
               </video>
             </div>
           </div>

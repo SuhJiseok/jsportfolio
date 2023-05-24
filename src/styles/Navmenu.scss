@@ -51,7 +51,18 @@
         >li:hover{
             color: #00FFB2;
         }
-
+        >li:first-of-type{
+            >a:visited{
+                color: white;
+                text-decoration: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                color: #00FFB2;
+            }
+        }
     }
     .closebtn{
         float: right;
