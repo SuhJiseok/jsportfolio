@@ -12,18 +12,35 @@
 .app{
   background-color: #131313;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   color: #ffffff;
   padding: 10px;
   padding-top: 0px;
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing: -0.5px;
+  
   }
   body {
     -ms-overflow-style: none;
+    overflow-x: hidden;
+
 }
  
+// ::-webkit-scrollbar {
+//     display: none;
+// }
+
 ::-webkit-scrollbar {
-    display: none;
+  width: 10px;  /* 스크롤바의 너비 */
+
 }
- 
+
+::-webkit-scrollbar-thumb {
+  height: 10%; /* 스크롤바의 길이 */
+  background:  linear-gradient(180deg, #00FF85 0%, #00FFB3 100%);
+
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background:none
+}
