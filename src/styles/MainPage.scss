@@ -1,0 +1,491 @@
+@import url(../styles/Reset.scss);
+
+.mainh1{
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 120px;
+  font-size: 8rem;
+  text-align: center;
+  line-height: 1.2;
+  width: 100vw;
+
+}
+
+
+.content1{
+  display: flex;
+  margin: 0 auto;
+  right: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  width: 90%;
+  top: 80px;
+
+  .btnwrap{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 20px;
+  }
+
+  .logobtn{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    button{
+      border: 1px solid gray;
+      background-color: rgba($color: #d9d9d9, $alpha: 0.5);
+      width: 30px;
+      height: 4px;
+      border-radius: 10px;
+      margin-left: 10px ;
+      cursor: pointer;
+
+    }
+  }
+  .btnname{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  p{
+    width: 30%;
+
+    font-size: 2rem;
+    
+  }
+  
+
+}
+.pebblewrap{
+
+  width: 50%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  margin-left: -180px;
+}
+
+
+.pebble{
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(139, 251, 211, 0.03);
+  box-shadow: inset 4px 4px 60px rgba(30, 251, 198, 0.98);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+  animation: morphing 7s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease-out;
+
+  margin-left: -200px;
+  img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+  }
+}
+
+.pebble::before{
+
+  width: 610px;
+  height: 610px;
+  background-color: rgba(139, 251, 211, 0.02);
+  box-shadow: inset 4px 4px 60px rgba(29, 252, 214, 0.98);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+  animation: morphing 8s infinite 2s;
+  z-index: 10;
+  position: absolute;
+  content: "";
+
+}
+.pebble::after{
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(139, 251, 211, 0.03);
+  box-shadow: inset 4px 4px 60px rgba(30, 251, 198, 0.98);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+  animation: morphing 10s infinite;
+  content: "";
+  filter: blur(2px);
+}
+
+@keyframes morphing {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  }
+  25% { 
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%		
+  }
+  100%{
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  }
+}
+
+.logoimg{
+
+  width: 350px;
+  height: 350px;
+  background:no-repeat;
+  background-position: center;
+  background-size: 340px 340px;
+  transition: 0.5s;
+
+
+}
+.content2{
+  display: flex;
+  width: 100%;
+
+  margin-top: 600px;
+  margin-left: 50px;
+
+
+  h2{
+    font-size: 10rem;
+  }
+  p{
+    font-size: 3rem;
+    width: 35%;
+
+    margin-top: 40px;
+  }
+}
+
+.content2 > div {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.content2 > div.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+//삼성전기
+
+
+
+.dvcontainer {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s, transform 1s;
+}
+
+.dvcontainer.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+.content3_1{
+
+  height: 100vh;
+  margin-left: -10px;
+  position: relative;
+  background: rgba(55, 55, 55, 0.19);
+  backdrop-filter: blur(2.5px);
+  transition: opacity 1s ease-in-out;
+  >h2{
+    font-size: 7rem;
+    position: relative;
+    top: -590px;
+    left: 1110px;
+    width: 31%;
+    >span:first-of-type{
+      background: linear-gradient(180deg, #00FF94 0%, rgba(40, 255, 100, 0.14) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    >span:last-of-type{
+      background: linear-gradient(180deg, #14FFD5 0%, rgba(0, 255, 163, 0.25) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+
+}
+
+
+.content3inner{
+  height:71%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.1fr;
+  margin-left: -10px;
+
+  >div.dvcontainer{
+    position: relative;
+
+    left: 100px;
+    >div.imac{ 
+      position: relative;
+      width: 95%;
+      overflow: hidden;
+      z-index: 12;
+
+
+      >img{
+        width: 100%;
+        z-index: 10;
+        position: relative;
+      }
+      >.videocontainer{
+
+        width: 95%;
+        height: 68%;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        z-index: 3;
+        >video{
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+
+        }
+
+
+  
+      }    
+    }
+  }
+ 
+}
+//코스닥 글로벌
+.content3_2{
+  height: 100vh;
+  margin-left: -10px;
+  position: relative;
+  background: rgba(55, 55, 55, 0.19);
+  backdrop-filter: blur(2.5px);
+  transition: opacity 1s ease-in-out;
+  
+
+
+  >h2{
+    font-size: 7rem;
+    position: relative;
+    top: -590px;
+    left: 1110px;
+    width: 26%;
+
+    >span:last-of-type{
+      background: linear-gradient(163.09deg, #00FFD1 52.68%, rgba(0, 148, 255, 0.69) 88.34%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-blend-mode: difference;
+    }
+  }
+  .ipad{
+    position: absolute;
+    width: 60%;
+
+    bottom: 0px;
+    right: 0px;
+    z-index: 30;
+    height: 54%;
+    >img{
+      width: 100%;
+      position: relative;
+      z-index: 30;
+    }
+    >.videocontainer{
+
+      width: 95%;
+      height: 90%;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      z-index: 3;
+
+      >video{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+      }
+    }    
+  }
+  .iphone{
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    bottom: -55px;
+    right: 0px;
+    z-index: 50;
+
+    >img{
+      width: 100%;
+      height: 85%;
+      position: relative;
+      z-index: 50;    
+    }
+    >.videocontainer{
+
+      width: 88%;
+      height: 90%;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      z-index: 3;
+
+      >video{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+
+      }
+    }    
+  }
+
+}
+//cjone
+.content3_3{
+  height: 100vh;
+  margin-left: -10px;
+  position: relative;
+  background: rgba(55, 55, 55, 0.19);
+  backdrop-filter: blur(2.5px);
+  transition: opacity 1s ease-in-out;
+
+  >h2{
+    font-size: 7rem;
+    position: relative;
+    top: -590px;
+    left: 1110px;
+    width: 26%;
+
+    >span:last-of-type{
+      background: linear-gradient(103.31deg, #4870FF 15.47%, rgba(215, 0, 250, 0.72) 63.22%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+  .ipad{
+    position: absolute;
+    width: 60%;
+
+    bottom: 0px;
+    right: 0px;
+    z-index: 30;
+    height: 54%;
+    >img{
+      width: 100%;
+      position: relative;
+      z-index: 30;
+    }
+    >.videocontainer{
+
+      width: 95%;
+      height: 90%;
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      z-index: 3;
+
+      >video{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+      }
+    }    
+  }
+  .iphone{
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    bottom: -55px;
+    right: 0px;
+    z-index: 50;
+
+    >img{
+      width: 100%;
+      height: 85%;
+      position: relative;
+      z-index: 50;    
+    }
+    >.videocontainer{
+
+      width: 88%;
+      height: 90%;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      z-index: 3;
+      overflow: hidden;
+
+      >video{
+        width: 100%;
+        height: 94%;
+        position: relative;
+        top: 12px;
+        z-index: 2;
+        border-radius: 20px;
+
+      }
+    }    
+  }
+}
+
+
+
+
+.bar{
+  width: 5px;
+  height: 340px;
+  background: linear-gradient(180deg, #00FFC2 0%, rgba(97, 252, 177, 0.68) 100%);
+  position: relative;
+  float: right;
+  right: 194px;
+  top: -446px;
+
+}
+.bar2{
+  width: 5px;
+  height: 200px;
+  background: linear-gradient(180deg, #00FFC2 0%, rgba(97, 252, 177, 0.68) 100%);
+  position: relative;
+  float: right;
+  right: 199px;
+  top: -306px;
+
+}
+section.reactintro{
+  background: black;
+  height: 110vh;
+  width: 100vw;
+  border: 1px solid red;
+  margin-left: -10px;
+  position: relative;
+}

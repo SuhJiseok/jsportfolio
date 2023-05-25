@@ -1,0 +1,59 @@
+@import url(../styles/Reset.scss);
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+
+@media screen {
+  
+}
+
+
+
+
+
+
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.app{
+  background-color: #131313;
+  height: 100%;
+  width: 100vw;
+  color: #ffffff;
+  padding: 10px;
+  padding-top: 0px;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
+  
+  }
+  body {
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+
+}
+ 
+// ::-webkit-scrollbar {
+//     display: none;
+// }
+
+::-webkit-scrollbar {
+  width: 10px;  /* 스크롤바의 너비 */
+
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10%; /* 스크롤바의 길이 */
+  background:  linear-gradient(180deg, #00FF85 0%, #00FFB3 100%);
+
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background:none
+}

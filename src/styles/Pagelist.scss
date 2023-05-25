@@ -1,0 +1,51 @@
+@import url(../styles/App.scss);
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+.pagelist{
+
+    margin-left: -10px;
+    position: relative;
+    margin-top: 450px;
+ 
+    ul>li{
+        text-align: center;
+        font-size: 17rem;
+        letter-spacing: 0.1em;
+        font-family: 'Roboto', sans-serif;
+        line-height: 95%;
+        -webkit-text-stroke: 2px white;
+        color:transparent;
+        font-weight: 900;
+
+        width: 100%;
+
+    }
+    ul>li:hover{
+        background: linear-gradient(to right, transparent 50%, #9EFF00 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: #001816;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 4px #001816;
+        transition:  1s;
+        cursor: pointer;
+    }
+    ul>li:nth-of-type(2){
+        letter-spacing: -0.04em;
+  
+
+    }
+    ul>li:nth-of-type(3){
+
+
+    }
+    ul>li:nth-of-type(4){
+
+
+    }
+    ul>li:nth-of-type(5){
+        letter-spacing: 0.3em;
+
+    }
+}

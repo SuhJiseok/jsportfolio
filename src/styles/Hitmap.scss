@@ -1,0 +1,333 @@
+@import './odometer-theme-default.min.css';
+
+
+.hitmap{
+    margin-left: -10px;
+    margin-top: 190px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-column-gap: 50px;
+    font-size: 4rem;
+    >div{
+        
+    }
+}
+
+.mapleft{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.maptime{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    >div{
+        box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+        width: 38%;
+        border-radius: 33px;
+        height: 360px;
+        background-color: #222222;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        >p:last-of-type{
+            text-align: right;
+        }
+    }
+}
+.mapclock{
+    
+    border: 1px solid gray;
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.odometerwrap{
+    display: flex;
+    align-items:end ;
+    position: relative;
+    bottom: 30px;
+
+    >p{
+
+        font-size: 3.2rem;
+    }
+}
+
+.odometer{
+
+    border-radius: 30px;
+    width: 70%;
+    height: 75px;
+    margin: 0 auto;
+    
+}
+.mapminute{
+    position: relative;
+    bottom: 30px;
+    >div{
+        text-align: center;
+    }
+    >div>span{
+        font-size: 5rem;
+        background: linear-gradient(94.05deg, #00FF57 44.92%, rgba(0, 255, 194, 0.92) 94.51%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+
+    }
+}
+
+
+
+.maptrain{
+    box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+    margin-top: 40px;
+    border-radius: 0px 33px 33px 0px;
+    height: 400px;
+    background-color: #222222;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 40px;
+    .calender{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        >div{
+
+            width: 100%;
+            height: 45%;
+            border-radius: 20px;
+
+        }
+        .december{
+            background: url(../images/dec.png) no-repeat  center;
+            background-size: 180px;
+            background-color: #141414;
+   
+        }
+        .may{
+            background: url(../images/may.png) no-repeat center;
+            background-size: 180px;
+            background-color: #141414;
+        }
+    }
+    .trainday{
+  
+        p{
+            text-align: center;
+            font-size: 3.5rem;
+            margin-top: 30px;
+        }
+        .dayfill{
+            border: 2px solid gray;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 40px;
+
+            >p:first-of-type{
+
+                margin-top: 90px;
+                font-size: 5.5rem;
+                font-family: 'Domine', serif;
+                letter-spacing: -1px;
+            }
+            >p:last-of-type{
+                font-size: 1.8rem;
+                margin-top: -10px;
+            }
+
+        }
+        p>span{
+            font-family: 'Domine', serif;
+        }
+    }
+}
+.mapcenter{
+    transform: translateY(-300px);
+
+}
+.mapcenter div:first-of-type{
+    height: 660px;
+    padding: 30px;
+    box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+    .resultdetail{
+        margin-top: 40px;
+        border-radius: 20px;
+        font-size: 2rem;
+        background: #1D1A1A;
+        box-shadow: inset 2px 2px 10px 2px rgba(0, 0, 0, 0.29);
+        >p{
+            transform: translateY(10%);
+        }
+
+    }
+}
+.mapcenter div:last-of-type{
+    height: 400px;
+    margin-top: 40px;
+    padding: 30px;
+    box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    >h2{
+        text-align: center;
+        
+    }
+    div.chevcontainer{
+        // top: 150px;
+        box-shadow: none;
+        margin-top: 100px;
+        height: 20%;
+        position: relative;
+        text-align: center;
+        font-size: 7rem;
+        line-height: 10%;
+        >p{
+            margin-top: -40px;
+        }
+        
+
+    }
+    
+}
+.mapcenter>div{
+
+    position: relative;
+    border-radius: 33px;
+    background-color: #222222;
+
+}
+
+.mapright{
+    margin-right: 10px;
+    transform: translateY(-300px);
+
+    
+}
+.mapright>div{
+    box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+    background-color: #222222;
+    border-radius: 33px;
+    padding-top: 20px;
+
+}
+.mapright div:first-of-type{
+    height: 700px;
+    >h2{
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 5rem;
+    }
+    >div.graph{
+
+        border-radius: 20px;
+        width: 95%;
+        margin-left: 0px;
+        position: relative;
+        top: 10px;
+        height: 60%;
+        overflow: hidden;
+        margin-left: 30px;
+        padding-top: 70px;
+        >div.blinder{
+
+            width: 50px;
+            height: 70%;
+            position: relative;
+            top: -815px;
+            left: 20px;
+            background-color: rgba(7, 13, 12, 1);
+            font-size: 0.8rem;
+            line-height: 450%;
+            text-align: center;
+            color: gray;
+        }
+
+    }
+}
+.mapright div:last-of-type{
+    margin-top: 40px;
+    height: 700px;
+    width: 90%;
+    >h2{
+        text-align: center;
+        margin-top: 60px;
+        font-family: 'Domine', serif;
+        font-size: 6rem;
+        line-height: 90px;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+    }
+    >div.list{
+        position: relative;
+        top: 40px;
+        width: 65%;
+        height: 35%;
+        border: 2px solid rgba(5, 234, 193, 1) ;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 40px;
+        >p{
+            font-size: 2.4rem;
+            line-height: 350%;
+            i{
+                margin-right: 20px;
+                color: rgba(5, 234, 193, 1);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+.progress-circle {
+    transform: rotate(-90deg) translateY(-25px)
+    translateX(195px);
+  }
+  
+  .progress-circle-bg {
+    fill: none;
+    stroke: #e6e6e6;
+  }
+  
+  .progress-circle-fg {
+    fill: none;
+    stroke: rgba(0, 254, 163, 1); // 원하는 색상으로 변경
+    stroke-linecap: round;
+ /*    animation: fillProgress 5s forwards; */
+  }
+  .progress-circle-fg.appear{
+    animation: fillProgress 4s forwards 2.5s;
+
+  }
+  @keyframes fillProgress {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+
+ 
