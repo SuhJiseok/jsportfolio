@@ -94,9 +94,12 @@ function Sub2() {
         <div>
           <h2>영화 속 세계, 리액트로<br/>들여다보기</h2>
           <p>MovieModal 컴포넌트는 <span>React</span>의 <span>useState</span>와 <span>useEffect 훅</span>, 그리고 <span>axios</span>가 마법처럼 작동하여 영화 상세 정보를 획득합니다. 사용자는 간단한 클릭만으로도 정보의 대화를 나누고, YouTube 트레일러로 영화의 세계에 빠져드는 황홀한 경험을 누릴 수 있습니다.</p>
+<<<<<<< HEAD
           <div className='pagebtn'>
             <span><a href="https://github.com/SuhJiseok/netflix_app_2023" target='_blank' rel='noopener noreferrer'>Github Page</a></span><span><a href='https://suhjiseok.github.io/netflix_app_2023/' target='_blank' rel='noopener noreferrer'>Page</a></span>
           </div>
+=======
+>>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
         </div>
         <div className='dvcontainer3'  ref={dvContainerRef6}>
           <div className='iphone'>

@@ -31,8 +31,12 @@ function Sub1(props) {
       <p>{props.p}</p>
       <div className='subbtn'>
       <span onClick={openModal}>웹 접근성 확인하기</span>
+<<<<<<< HEAD
       <span><a href={props.githubUrl} target='_blank' rel='noopener noreferrer'>Github Page</a></span>
       <span><a href={props.Page} target='_blank' rel='noopener noreferrer'>Page</a></span>
+=======
+      <span><a href={props.githubUrl}>Github Page</a></span>
+>>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
       </div>
     </div>
     {modalOpen && <Modal id={props.id} modalClosing={modalClosing} closeModal={startCloseModal} />}

@@ -7,17 +7,29 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^4.3.0",
+<<<<<<< HEAD
+=======
+    "compass-mixins": "^0.12.12",
+>>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
     "node-sass": "^8.0.0",
     "odometer": "^0.4.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+<<<<<<< HEAD
     "react-odometerjs": "^3.1.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "scrollmagic": "^2.0.8",
     "smooth-scroll": "^16.1.3",
+=======
+    "react-router-dom": "^6.11.1",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
+    "scenejs": "^1.10.1",
+    "scroll": "^3.0.1",
+>>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
     "web-vitals": "^2.1.4"
   },
   "scripts": {
