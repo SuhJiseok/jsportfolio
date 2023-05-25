@@ -254,11 +254,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <Sub1 h2="삼성전기"  p={paragraph} h3={headline} id="sam" githubUrl="https://github.com/SuhJiseok/samsungsem" Page="https://suhjiseok.github.io/samsungsem/"/>
-=======
-        <Sub1 h2="삼성전기"  p={paragraph} h3={headline} id="sam" githubUrl="https://github.com/SuhJiseok/samsungsem"/>
->>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
       </div>
 
     </div>
@@ -294,11 +290,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} h3={headline2} id="kos" githubUrl="https://github.com/SuhJiseok/kosdaqglobal" Page="https://suhjiseok.github.io/kosdaqglobal/"/>
-=======
-        <Sub1 h2="코스닥 글로벌 세그먼트"  p={paragraph2} h3={headline2} id="kos" githubUrl="https://github.com/SuhJiseok/kosdaqglobal"/>
->>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
       </div>
 
     </div>
@@ -331,11 +323,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <Sub1 h2="CJ ONE"  p={paragraph3} h3={headline3} id="cj" githubUrl="https://github.com/SuhJiseok/CJone" Page="https://suhjiseok.github.io/CJone/"/>
-=======
-        <Sub1 h2="CJ ONE"  p={paragraph3} h3={headline3} id="cj" githubUrl="https://github.com/SuhJiseok/CJone" />
->>>>>>> 606bb30c3abc28276d2841cea1730fb1868fcfbd
       </div>
     </div>
   </section>
