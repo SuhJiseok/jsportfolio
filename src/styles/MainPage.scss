@@ -1,4 +1,6 @@
 @import url(../styles/Reset.scss);
+@import url(../styles/App.scss);
+
 
 .mainh1{
 
@@ -488,4 +490,145 @@ section.reactintro{
   border: 1px solid red;
   margin-left: -10px;
   position: relative;
+}
+
+
+// 모바일 화면
+
+@media screen and (max-width: 412px) {
+  // 여기에 가로길이가 412px 이하일 때 적용할 스타일을 작성합니다.
+  .mainh1 {
+    border: 1px solid red;
+    width: 90vw;
+    font-size: 11vw;
+    line-height: 150%;
+    margin: 0 auto;
+
+  }
+  .content1{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 35px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    width: 90%;
+
+    border: 1px solid red;
+    
+    .btnwrap{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-left: 40px;
+      order: 2;
+      border: 1px solid greenyellow;
+      width: 60%;
+
+
+    }
+  
+    .logobtn{
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+  
+      button{
+        border: 1px solid gray;
+        background-color: rgba($color: #d9d9d9, $alpha: 0.5);
+        width: 30px;
+        height: 4px;
+        border-radius: 10px;
+        margin-left: 10px ;
+        cursor: pointer;
+        
+      }
+    }
+    .btnname{
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 4.5vw;
+      color: rgba(255, 255, 255, 0.6);
+      border: 1px solid purple;
+      width: 50%;
+      margin: 0 auto;
+    }
+    p{
+        width: 100%;
+        border: 1px solid red;
+        text-align: center;
+        font-size: 4vw;
+        order: 3;
+        
+    }
+
+  .pebblewrap{
+    border: 1px solid blue;
+    width: 90%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    order: 1;
+    margin: 0 auto;
+
+  }
+  
+  
+  .pebble{
+    position: relative;
+    width: 90%;
+    height: 250px;
+    background-color: rgba(139, 251, 211, 0.03);
+    box-shadow: inset 4px 4px 60px rgba(30, 251, 198, 0.98);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+    animation: morphing 7s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease-out;
+
+    margin: 0 auto;
+    >.logoimg{
+
+      width: 70%;
+      height: 70%;
+      background-size: contain;
+    }
+
+  }
+  
+  .pebble::before{
+  
+    width: 100%;
+    height: 300px;
+    background-color: rgba(139, 251, 211, 0.02);
+    box-shadow: inset 4px 4px 60px rgba(29, 252, 214, 0.98);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+    animation: morphing 8s infinite 2s;
+    z-index: 10;
+    position: absolute;
+    content: "";
+  
+  }
+  .pebble::after{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(139, 251, 211, 0.03);
+    box-shadow: inset 4px 4px 60px rgba(30, 251, 198, 0.98);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    box-shadow 15px 15px 50px rgba(0,0,0,0.2);
+    animation: morphing 10s infinite;
+    content: "";
+    filter: blur(2px);
+  }
+}
 }

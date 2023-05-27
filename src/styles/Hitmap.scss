@@ -8,15 +8,15 @@
     grid-template-columns: 2fr 1fr 2fr;
     grid-column-gap: 50px;
     font-size: 4rem;
-    >div{
-        
-    }
+    // border: 1px solid red;
+    width: 100vw;
+
 }
 
 .mapleft{
     display: flex;
     flex-direction: column;
-    
+    // border: 1px solid palevioletred;
     
 }
 .maptime{
@@ -61,17 +61,18 @@
 
     >p{
 
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
 }
 
 .odometer{
 
     border-radius: 30px;
-    width: 70%;
+    width: 72%;
     height: 75px;
     margin: 0 auto;
-    
+    display: block;
+    position: relative;
 }
 .mapminute{
     position: relative;
@@ -220,7 +221,8 @@
 .mapright{
     margin-right: 10px;
     transform: translateY(-300px);
-
+    // border: 1px solid blue;
+    
     
 }
 .mapright>div{
@@ -229,6 +231,10 @@
     border-radius: 33px;
     padding-top: 20px;
 
+}
+.mapright>div:first-of-type{
+    width: 100%;
+    // border: 1px solid red;
 }
 .mapright div:first-of-type{
     height: 700px;
@@ -251,7 +257,7 @@
         >div.blinder{
 
             width: 50px;
-            height: 70%;
+            height: 66%;
             position: relative;
             top: -815px;
             left: 20px;

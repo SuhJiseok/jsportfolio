@@ -5,12 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 
 
-@media screen {
-  
-}
-
-
-
 
 
 
@@ -21,7 +15,9 @@
 *{
   margin: 0;
   padding: 0;
+  
 }
+
 .app{
   background-color: #131313;
   height: 100%;
@@ -31,14 +27,17 @@
   padding-top: 0px;
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing: -0.5px;
-  
+
   }
-  body {
+body {
     -ms-overflow-style: none;
     overflow-x: hidden;
 
 }
- 
+ html,body{
+  font-size: 62.5%;
+
+ }
 // ::-webkit-scrollbar {
 //     display: none;
 // }
@@ -56,4 +55,12 @@
 }
 ::-webkit-scrollbar-track {
   background:none
+}
+
+@media screen and (max-width: 412px) {
+  .app{
+    padding: 0;
+
+  }
+
 }

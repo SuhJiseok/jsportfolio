@@ -9,22 +9,28 @@
   background: transparent;
   overflow: hidden;
   margin-left: -10px;
+
+  // height: 100px;
+
 }
 
 .child {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   // background: black;
   // border-radius: 0px 0px 30px 30px;
   // border: 1px solid red;
   background: transparent;
+  height: inherit;
+
 }
 
 .thnkcontainer {
   display: flex;
   overflow: hidden;
+
   >span {
     font-size: 10vw;
     white-space: nowrap;
@@ -32,7 +38,7 @@
     // -webkit-text-stroke: 3px linear rgba(0,255,102,1) rgba(0,255,102,1);
     color:transparent;
     // text-transform: capitalize;
-    
+
     -webkit-text-fill-color: transparent;
   }
   >span:nth-of-type(odd){

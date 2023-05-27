@@ -93,9 +93,12 @@ function MainPage() {
 
       pebble.style.transform = `translate(${Math.min(Math.max(x, 0), maxX)}px, ${Math.min(Math.max(y, 0), maxY)}px)`;
     };
+    const mql = window.matchMedia("(max-width: 412px)");
 
-    document.addEventListener('mousemove', handleMouseMove);
-
+    if (!mql.matches) {
+      document.addEventListener('mousemove', handleMouseMove);
+    }
+  
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
