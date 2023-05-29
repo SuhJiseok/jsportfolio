@@ -111,3 +111,118 @@
     border-radius: 6px 6px 0 0;
 
   }
+
+
+
+ //모바일 화면 
+  @media screen and (max-width: 414px) {
+    @keyframes moveHourHand {
+      0% {
+          transform: rotateZ(0deg);
+      }
+      100% {
+          transform: rotateZ(300deg);  /* 10 hours * 30 degrees per hour */
+      }
+  }
+  
+  @keyframes moveMinuteHand {
+      0% {
+          transform: rotateZ(0deg);
+      }
+      100% {
+          transform: rotateZ(360deg);  /* 360 degrees */
+      }
+  }
+  
+  .hr {
+      animation: moveHourHand 2s forwards;
+  }
+  
+  .mn {
+      animation: moveMinuteHand 2s ease-in-out;
+  }
+  
+  
+  .clock {
+      display: flex;
+  
+      width: 100px;
+      height: 100px;
+   
+  
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      background-size: cover;
+      border: 4px solid #191919;
+      border-radius: 50%;
+      box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5),
+        inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+        inset -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
+        p{
+          color: transparent;
+          -webkit-text-stroke: 1px white;
+        }
+    }
+    
+    .clock:before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #747474;
+      border-radius: 50%;
+      z-index: 999;
+    }
+    
+    .clock .hour,
+    .clock .min,
+    .clock .sec {
+      position: absolute;
+    }
+    
+    .clock .hour,
+    .hr {
+      width: 50px;
+      height: 60px;
+    }
+    
+    .clock .min,
+    .mn {
+      width: 50px;
+      height: 80px;
+  
+    }
+    
+    
+    .hr,
+    .mn,
+    .sc {
+      display: flex;
+      justify-content: center;
+      /*align-items: center;*/
+      position: absolute;
+      border-radius: 50%;
+    }
+    
+    .hr:before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 30px;
+      background: #00ffc2;
+      z-index: 9;
+      border-radius: 6px 6px 0 0;
+    }
+    
+    .mn:before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 40px;
+      background: #8b8b8b;
+      z-index: 10;
+      border-radius: 6px 6px 0 0;
+  
+    }
+  }

@@ -227,9 +227,9 @@ function Hitmap() {
                     <div className='dayfill' ref={dayfillRef}>
                         <p>{dayCount} Days</p>
                         <p>훈련일수 기준</p>
-                        <svg className="progress-circle" width="300" height="300">
-                        <circle className="progress-circle-bg" cx="150" cy="150" r="137.5" strokeWidth="25" />
-                        <circle ref={circleRef} className="progress-circle-fg" cx="150" cy="150" r="137.5" strokeWidth="25" strokeDasharray="863.94" strokeDashoffset="863.94" />
+                        <svg className="progress-circle" >
+                        <circle className="progress-circle-bg" /* cx="150" cy="150" r="137.5" strokeWidth="25" */ />
+                        <circle ref={circleRef} className="progress-circle-fg" /* cx="150" cy="150" r="137.5" strokeWidth="25" strokeDasharray="863.94" strokeDashoffset="863.94" */ />
                         </svg>
                     </div>
          
@@ -242,7 +242,7 @@ function Hitmap() {
               <div className='resultdetail'>
                 <p>1. HTML, CSS, Javascript를 이용한 반응형 웹사이트 제작</p><br/>
                 <p>2. React를 사용하여 컴포넌트 및 상태 관리를 통한 웹사이트 유지보수 향상  </p><br/>
-                <p>3. Firebase를 통한 서버리스 사이트 제작 </p>
+                <p>3. Firebase를 통한 서버리스 사이트 제작 및 데이터 관리 </p>
               </div>
 
             </div>

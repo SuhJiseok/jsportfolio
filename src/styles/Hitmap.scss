@@ -153,7 +153,24 @@
                 font-size: 1.8rem;
                 margin-top: -10px;
             }
-
+            .progress-circle{
+                width: 300px;
+                height: 300px;
+            }
+            .progress-circle-bg{
+                cx: 150px;
+                cy: 150px;
+                r:137.5;
+                stroke-width: 25;
+            }
+            .progress-circle-fg{
+                cx: 150px;
+                cy: 150px;
+                r:137.5;
+                stroke-width: 25;
+                stroke-dasharray: 863.94;
+                stroke-dashoffset: 863.94;
+            }
         }
         p>span{
             font-family: 'Domine', serif;
@@ -335,5 +352,363 @@
     }
   }
   
+///모바일 화면
+  @media screen and (max-width: 414px) {
+    .hitmap{
+        margin-left: -10px;
+        margin-top: 50px;
+        font-size: 4rem;
+        // border: 1px solid red;
+        width: 100vw;
+        // border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    
+    .mapleft{
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid palevioletred;
 
- 
+        
+    }
+    .maptime{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0px;
+
+        >div{
+            box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+            width: 50%;
+            border-radius: 33px;
+            height: 200px;
+            background-color: #222222;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            >p:last-of-type{
+                text-align: right;
+            }
+        }
+    }
+
+    
+    .odometerwrap{
+        display: flex;
+        align-items:end ;
+        position: relative;
+        bottom: 30px;
+
+        >p{
+    
+            font-size: 3rem;
+        }
+    }
+    
+    .odometer{
+    
+        border-radius: 20px;
+        width: 72%;
+        height: 40px;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+
+    }
+    .mapminute{
+        position: relative;
+        bottom: 30px;
+        >div{
+            text-align: center;
+        }
+        >div>span{
+            font-size: 5rem;
+            background: linear-gradient(94.05deg, #00FF57 44.92%, rgba(0, 255, 194, 0.92) 94.51%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+    
+        }
+    }
+    
+    
+    
+    .maptrain{
+        box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+        margin-top: 40px;
+        border-radius:33px;
+        height: 350px;
+        background-color: #222222;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid yellow;
+        .calender{
+            display: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            >div{
+    
+                width: 100%;
+                height: 45%;
+                border-radius: 20px;
+    
+            }
+            .december{
+                background: url(../images/dec.png) no-repeat  center;
+                background-size: 180px;
+                background-color: #141414;
+       
+            }
+            .may{
+                background: url(../images/may.png) no-repeat center;
+                background-size: 180px;
+                background-color: #141414;
+            }
+        }
+        .trainday{
+      
+            p{
+                text-align: center;
+                font-size: 4rem;
+                margin-top: 30px;
+
+            }
+            .dayfill{
+                border: 2px solid gray;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-top: 40px;
+    
+                >p:first-of-type{
+    
+                    margin-top: 75px;
+                    font-size: 5.5rem;
+                    font-family: 'Domine', serif;
+                    letter-spacing: -1px;
+                }
+                >p:last-of-type{
+                    font-size: 1.8rem;
+                    margin-top: 0px;
+                }
+   
+                .progress-circle{
+                    width: 300px;
+                    height: 300px;
+
+                    transform: translateX(-50px) translateY(-170px) rotate(-89deg) scale(0.7);
+                }
+                .progress-circle-bg{
+                    cx: 150px;
+                    cy: 150px;
+                    r:137.5;
+                    stroke-width: 25;
+                }
+                .progress-circle-fg{
+                    cx: 150px;
+                    cy: 150px;
+                    r:137.5;
+                    stroke-width: 25;
+                    stroke-dasharray: 863.94;
+                    stroke-dashoffset: 863.94;
+                }
+            }
+            p>span{
+                font-family: 'Domine', serif;
+            }
+        }
+    }
+    .mapcenter{
+        transform: translateY(20px);
+    
+    }
+    .mapcenter div:first-of-type{
+        height: 300px;
+        padding: 30px;
+        box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+        >h2{
+            font-size: 5rem;
+        }
+        .resultdetail{
+            margin-top: 40px;
+            border-radius: 20px;
+            font-size: 2rem;
+            background: #1D1A1A;
+            box-shadow: inset 2px 2px 10px 2px rgba(0, 0, 0, 0.29);
+            height: 150px;
+            >p{
+                transform: translateY(10%);
+                font-size: 3rem;
+                display: flex;
+
+
+            }
+
+        }
+    }
+    .mapcenter>div:last-of-type{
+        height: 400px;
+        margin-top: 40px;
+        padding: 30px;
+        box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        >h2{
+            text-align: center;
+            
+        }
+        div.chevcontainer{
+            // top: 150px;
+            box-shadow: none;
+            margin-top: 100px;
+            height: 20%;
+            position: relative;
+            text-align: center;
+            font-size: 7rem;
+            line-height: 10%;
+            >p{
+                margin-top: -40px;
+            }
+            
+    
+        }
+        
+    }
+    .mapcenter>div{
+    
+        position: relative;
+        border-radius: 33px;
+        background-color: #222222;
+    
+    }
+    
+    .mapright{
+        margin-right: 10px;
+        transform: translateY(50px);
+        // border: 1px solid blue;
+        
+        
+    }
+    .mapright>div{
+        box-shadow: inset 6px 6px 20px 2px rgba(90, 90, 90, 0.65);
+        background-color: #222222;
+        border-radius: 33px;
+        padding-top: 20px;
+    
+    }
+    .mapright>div:first-of-type{
+        width: 100vw;
+        height: 400px;
+        // border: 1px solid red;
+    }
+    .mapright>div:first-of-type{
+        padding-top: 10px;
+        >h2{
+            margin-left: 30px;
+            margin-top: 30px;
+            font-size: 5rem;
+        }
+        >div.graph{
+    
+            border-radius: 20px;
+            width: 96%;
+            position: relative;
+            top: 0px;
+            height: 160px;
+            overflow: hidden;
+            margin-left: 0px;
+            margin: 0 auto;
+            padding-top: 90px;
+            >div.blinder{
+                
+                width: 50px;
+                height: 110px;
+                position: relative;
+                top: -815px;
+                left: 20px;
+                background-color: rgba(7, 13, 12, 1);
+                font-size: 0.5rem;
+                line-height: 1.5;
+                text-align: center;
+                color: gray;
+            }
+    
+        }
+    }
+    .mapright div:last-of-type{
+        margin-top: 40px;
+        height: 400px;
+        width: 100vw;
+        >h2{
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Domine', serif;
+            font-size: 6rem;
+            line-height: 60px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        >div.list{
+            position: relative;
+            top: 40px;
+            width: 65%;
+            height: 100px;
+            border: 2px solid rgba(5, 234, 193, 1) ;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 20px;
+            >p{
+                font-size: 2.8rem;
+                line-height: 200%;
+                transform: translateY(50%);
+                i{
+                    margin-right: 20px;
+                    color: rgba(5, 234, 193, 1);
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    .progress-circle {
+        transform: rotate(-90deg) translateY(-25px)
+        translateX(195px);
+      }
+      
+      .progress-circle-bg {
+        fill: none;
+        stroke: #e6e6e6;
+      }
+      
+      .progress-circle-fg {
+        fill: none;
+        stroke: rgba(0, 254, 163, 1); // 원하는 색상으로 변경
+        stroke-linecap: round;
+     /*    animation: fillProgress 5s forwards; */
+      }
+      .progress-circle-fg.appear{
+        animation: fillProgress 4s forwards 2.5s;
+    
+      }
+      @keyframes fillProgress {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+  }
+

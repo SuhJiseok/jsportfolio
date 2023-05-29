@@ -166,6 +166,7 @@
 
   h2{
     font-size: 10rem;
+
   }
   p{
     font-size: 3rem;
@@ -495,10 +496,10 @@ section.reactintro{
 
 // 모바일 화면
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 414px) {
   // 여기에 가로길이가 412px 이하일 때 적용할 스타일을 작성합니다.
   .mainh1 {
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 90vw;
     font-size: 11vw;
     line-height: 150%;
@@ -516,7 +517,7 @@ section.reactintro{
     position: relative;
     width: 90%;
 
-    border: 1px solid red;
+    // border: 1px solid red;
     
     .btnwrap{
       display: flex;
@@ -524,7 +525,7 @@ section.reactintro{
       position: relative;
       margin-left: 40px;
       order: 2;
-      border: 1px solid greenyellow;
+      // border: 1px solid greenyellow;
       width: 60%;
 
 
@@ -554,13 +555,13 @@ section.reactintro{
       margin-left: 20px;
       font-size: 4.5vw;
       color: rgba(255, 255, 255, 0.6);
-      border: 1px solid purple;
+      // border: 1px solid purple;
       width: 50%;
       margin: 0 auto;
     }
     p{
         width: 100%;
-        border: 1px solid red;
+        // border: 1px solid red;
         text-align: center;
         font-size: 4vw;
         order: 3;
@@ -568,7 +569,7 @@ section.reactintro{
     }
 
   .pebblewrap{
-    border: 1px solid blue;
+    // border: 1px solid blue;
     width: 90%;
     height: 300px;
     display: flex;
@@ -630,5 +631,37 @@ section.reactintro{
     content: "";
     filter: blur(2px);
   }
+}
+
+.content2{
+  display: flex;
+  width: 100%;
+
+  margin-top: 100px;
+  margin-left: 10px;
+
+
+  h2{
+    font-size: 12vw;
+    // border: 1px solid red;
+    width: 80vw;
+  }
+  p{
+    font-size: 3rem;
+    width: 80%;
+    // border: 1px solid yellow;
+    margin-top: 20px;
+  }
+}
+
+.content2 > div {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.content2 > div.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 }
