@@ -27,6 +27,7 @@
     margin-right: 10px;
     font-size: 2rem;
     padding: 10px;
+
   }
   >div.sublogo>span:first-of-type{
     border-color: rgba(241,101,41,0.9);
@@ -43,6 +44,7 @@
   >div.subbtn{
     display: flex;
     justify-content: space-between;
+
   }
   >div.subbtn>span:first-of-type{
     cursor: pointer;
@@ -58,7 +60,8 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    border: none;
+
+    z-index: 100;
     >a:visited{
       text-decoration: none;
       color:white;
@@ -89,4 +92,108 @@
 .scrollwrap>p{
   font-size: 2rem;
   margin-top: 30px;
+}
+
+
+
+//모바일
+@media screen and (max-width: 414px) {
+  .sub1{
+
+    width: 100%;
+    position: relative;
+    left: 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+  
+    >h2{
+      font-size: 2.8rem;
+    }
+    >h3{
+      font-size: 8rem;
+    }
+    >p{
+      font-size: 2.5rem;
+      margin-top: 20px;
+      line-height: 200%;
+  
+    }
+    >div>span{
+      border: 3px solid;
+      margin-right: 10px;
+      font-size: 2rem;
+      padding: 10px;
+      margin-top: 10px;
+
+    }
+    .sublogo{
+      margin-top: 20px;
+    }
+    >div.sublogo>span:first-of-type{
+      border-color: rgba(241,101,41,0.9);
+      color:rgba(241,101,41,0.9);
+    }
+    >div.sublogo>span:nth-of-type(2){
+      border-color: rgba(41,101,241,0.9);
+      color:rgba(41,101,241,0.9);
+    }
+    >div.sublogo>span:nth-of-type(3){
+      border-color: rgba(253,253,17,0.9);
+      color:rgba(253,253,17,0.9);
+    }
+    >div.subbtn{
+      display: flex;
+      justify-content: space-between;
+
+    
+    }
+    >div.subbtn>span:first-of-type{
+      cursor: pointer;
+    }
+    >div.subbtn>span{
+      width: 30%;
+      height: 50%;
+      background: linear-gradient(180deg, #353535 0%, #0F0F0F 56.25%, #282828 100%);
+      box-shadow: inset 1px 2px 5px 1px rgba(94, 94, 94, 0.49);
+      font-size: 1.5rem;
+      border-radius: 22px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      border: none;
+      >a:visited{
+        text-decoration: none;
+        color:white;
+        
+      }
+      >a:link{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+  .scrollwrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-150px);
+  }
+  .subscroll{
+    width: 5px;
+    height: 70%;
+    background: rgba(217, 217, 217, 0.6);
+    border-radius: 5px;
+    overflow: hidden;
+    
+    
+  }
+  .scrollwrap>p{
+    font-size: 2rem;
+    margin-top: 30px;
+  }
 }

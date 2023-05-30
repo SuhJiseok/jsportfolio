@@ -49,3 +49,32 @@
 
     }
 }
+
+@media screen and (max-width: 414px) {
+    .pagelist{
+
+        margin-left: 0px;
+        position: relative;
+        margin-top: 250px;
+     
+        ul>li{
+            text-align: center;
+            font-size: 10rem;
+            letter-spacing: 0.1em;
+            font-family: 'Roboto', sans-serif;
+            line-height: 130%;
+            -webkit-text-stroke: 1px white;
+            color:transparent;
+            font-weight: 900;
+    
+            width: 100%;
+    
+        }
+        ul>li:hover{
+
+            -webkit-text-stroke: 2px #001816;
+
+        }
+
+    }
+}
