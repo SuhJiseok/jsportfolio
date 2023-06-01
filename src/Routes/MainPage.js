@@ -330,7 +330,7 @@ useEffect(() => {
       </div>
     </div>
   </section>
-  <section className='reactinfo'>
+  <section className='reactinfocontainer'>
     <Reactinfo />
   </section>
   <section className='netflixcontainer'>

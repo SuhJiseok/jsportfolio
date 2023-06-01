@@ -31,7 +31,7 @@ function Reactinfo() {
     <>
     <div className='reactinfo'>
       <div className='logocontainer' ref={logoContainerRef}>
-      <div className={`reactlogo ${isIntersecting ? 'animate' : ''}`}>
+        <div className={`reactlogo ${isIntersecting ? 'animate' : ''}`}>
           <span class='point'></span>
           <span class='ring-1'></span>
           <span class='ring-2'></span>
