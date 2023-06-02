@@ -299,7 +299,7 @@
   }
   }
  
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 450px) {
 
     .netflixcontainer{
       background-color: black;
@@ -463,15 +463,15 @@
           }
           >.videocontainer{
     
-            width: 95%;
-            height: 68%;
+            width: 100%;
+            height: 92%;
             position: absolute;
-            top: 30px;
-            left: 20px;
+            top: 8px;
+            left: 0px;
             z-index: 3;
             >video{
               width: 100%;
-              height: 133%;
+              height: 100%;
               z-index: 2;
     
             }
@@ -523,9 +523,9 @@
       >div.dvcontainer3{
     
 
-        transition: transform 1s;
-        transform: translateX(0px);
-        opacity: 1;
+        transition: transform 1.5s;
+        transform: translateX(70px);
+        opacity: 0;
     
         >div.iphone{ 
           position: relative;

@@ -57,10 +57,13 @@ body {
   background:none
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 450px) {
   .app{
     padding: 0;
 
+  }
+  body{
+    overflow-x: hidden;
   }
 
 }
