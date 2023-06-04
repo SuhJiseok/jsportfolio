@@ -33,6 +33,14 @@ function MainPage() {
 
   const [logoIndex, setLogoIndex] = useState(0);
 
+  const profileRef = useRef(null);
+  const samRef = useRef(null);
+  const kosdaqRef = useRef(null);
+  const cjRef = useRef(null);
+  const netflixRef = useRef(null);
+  const aiRef = useRef(null);
+  const contactRef = useRef(null);
+  const refs = { profileRef, samRef, kosdaqRef, cjRef, netflixRef, aiRef, contactRef }
   
  const headline =[
   "아름다움과 사용성이",
@@ -206,7 +214,7 @@ useEffect(() => {
   return (
     <>
     <div>
-      <Navmenu/>  
+      <Navmenu refs={refs} />  
       <Header onNavClick={() => setIsNavOpen(true)} />
       <Bgmove ref={bgmoveRef}/>
       <h1 className='mainh1'>트렌디하고<br/>
@@ -232,7 +240,7 @@ useEffect(() => {
           <p className='btnname'>{buttonLabels[logoIndex]}</p>
         </div> 
       </div>
-      <section className='profilecontainer'>
+      <section className='profilecontainer' ref={profileRef}>
           <Profile />
       </section>
       <div className='content2'>
@@ -245,7 +253,7 @@ useEffect(() => {
     <Hitmap/>
     <Pagelist/>
     <More />
-    <div className='content3_1' >
+    <div className='content3_1'  ref={samRef}>
       <div className='content3inner'>
         <div className='dvcontainer' ref={dvContainerRef1}>
           <div className='imac'>
@@ -257,12 +265,12 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <Sub1 h2="삼성전기"  p={paragraph} h3={headline} id="sam" githubUrl="https://github.com/SuhJiseok/samsungsem" Page="https://suhjiseok.github.io/samsungsem/"/>
+       <Sub1 h2="삼성전기" p={paragraph} h3={headline} id="sam" githubUrl="https://github.com/SuhJiseok/samsungsem" Page="https://suhjiseok.github.io/samsungsem/"/>
       </div>
 
     </div>
 
-    <div className='content3_2'>
+    <div className='content3_2' ref={kosdaqRef} >
       <div className='content3inner'>
         <div className='dvcontainer' ref={dvContainerRef2}>
           
@@ -298,7 +306,7 @@ useEffect(() => {
 
     </div>
   <section className='content3wrap'>
-    <div className='content3_3'>
+    <div className='content3_3' ref={cjRef}>
       <div className='content3inner'>
         <div className='dvcontainer' ref={dvContainerRef3}>
           <div className='imac'>
@@ -333,14 +341,14 @@ useEffect(() => {
   <section className='reactinfocontainer'>
     <Reactinfo />
   </section>
-  <section className='netflixcontainer'>
+  <section className='netflixcontainer' ref={netflixRef}>
     <Sub2 />
   </section>
-  <section className='gptcontainer'>
+  <section className='gptcontainer' ref={aiRef}>
     <Sub3 />
   </section>
   <Thnk />
-  <section className='Contactcontainer'>
+  <section className='Contactcontainer' ref={contactRef}>
   <Contact />
   </section>
     </>
