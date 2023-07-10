@@ -60,7 +60,7 @@ function Contact() {
           <p>Front-End<br/> Developer</p>
         </div>
         <div className="cardinfo">
-          <p>tel : 010 6789 4086</p>
+          <p>Tel : 010 6789 4086</p>
           <p>E-mail : nastudiolab@gmail.com</p>
           <p>Github :<a href='https://github.com/SuhJiseok'> https://github.com/SuhJiseok</a></p>
         </div>
